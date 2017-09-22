@@ -1,0 +1,26 @@
+
+project_name: master
+project_root: /data/work/src/dzm2/dzm2_c
+
+master_config:
+    project_name: master
+    root_path: /data/work/src/dzm2
+    project_c: /data/work/src/dzm2/dzm2_c
+    project_lua: /data/work/src/dzm2/dzm2_lua
+    project_res: /data/work/src/dzm2/svn/frontend/assets
+    project_cfg: /data/work/src/dzm2/svn/frontend/config
+    res_path: /data/work/src/dzm2/Resources
+
+vega_config:
+    project_name: master
+    root_path: /data/work/src/VegaGame
+    project_c: /data/work/src/VegaGame/vega_c
+    project_lua: /data/work/src/VegaGame/vega_lua
+    project_res: /data/work/src/VegaGame/svn/frontend/Assets
+    project_cfg: /data/work/src/VegaGame/svn/frontend/config
+    res_path: /data/work/src/VegaGame/Resources
+
+TexturePackerProcessNumber: 8
+TexturePacker: "/usr/local/bin/TexturePacker"
+
+CocosTool: /Applications/Cocos/Cocos Studio 2.app/Contents/MacOS/Cocos.Tool
