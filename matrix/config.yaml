@@ -10,6 +10,7 @@ master_config:
     project_res: /data/work/src/dzm2/svn/frontend/assets
     project_cfg: /data/work/src/dzm2/svn/frontend/config
     res_path: /data/work/src/dzm2/Resources
+    mtool_path: /data/work/src/mtool_pc
 
 vega_config:
     project_name: master
@@ -19,6 +20,7 @@ vega_config:
     project_res: /data/work/src/VegaGame/svn/frontend/Assets
     project_cfg: /data/work/src/VegaGame/svn/frontend/config
     res_path: /data/work/src/VegaGame/Resources
+    mtool_path: /data/work/src/mtool_vega
 
 TexturePackerProcessNumber: 8
 TexturePacker: "/usr/local/bin/TexturePacker"

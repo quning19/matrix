@@ -29,6 +29,10 @@ def git_update(path):
     sh.cd(path)
     logger.info('git pull [{path}]'.format(path=path))
     ret = sh.git('pull', _out=sys.stdout, _err=sys.stdout)
+    # print '==='
+    # print ret
+    # print '==='
+    # print 'Already up-to-date' in ret
 
 def git_get_tags(src_path):
     git = sh.Command('/usr/bin/git')

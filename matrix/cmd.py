@@ -26,25 +26,25 @@ def update_vega_res():
     project_setting = common_utils.getMainConfig('vega_config')
     gitutil.git_update(project_setting['project_c'])
     gitutil.git_update(project_setting['project_lua'])
-    sh.cd('/data/work/src/dzm2/mtool')
+    sh.cd(project_setting['mtool_path'] or '/data/work/src/dzm2/mtool')
     mtool = sh.Command('env/bin/mtl')
     mtool('luaalt', _out=sys.stdout, _err=sys.stdout)
     has_update = svnutil.update(project_setting['project_res'])
     if has_update:
-        sh.cd('/data/work/src/dzm2/mtool')
-        mtool = sh.Command('env/bin/mtl')
         # mtool('task_dev', '-g', 'vega', _out=sys.stdout, _err=sys.stdout)
         mtool('ui', _out=sys.stdout, _err=sys.stdout)
         mtool('res', _out=sys.stdout, _err=sys.stdout)
 
     has_update = svnutil.update(project_setting['project_cfg'])
     if has_update:
-        sh.cd('/data/work/src/dzm2/mtool')
-        mtool = sh.Command('env/bin/mtl')
         mtool('cfg', _out=sys.stdout, _err=sys.stdout)
+
+
 
 main.add_command(update_vega_res,name='v')
 
 
+from matrix.vega_pvp import server_log_analyse
+main.add_command(server_log_analyse.run,name='server_log')
 if __name__ == '__main__':
     main()
