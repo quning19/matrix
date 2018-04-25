@@ -15,34 +15,17 @@ def main(**options):
     """We All In Matrix"""
     pass
 
-from .update import update_all_res
-main.add_command(update_all_res.run,name='update')
+# from .update import update_all_res
+# main.add_command(update_all_res.run,name='update')
+#
+# from .update import res
+# main.add_command(res.switch_upgrade_path,name='sw')
 
-from .update import res
-main.add_command(res.switch_upgrade_path,name='sw')
-
-@click.command()
-def update_vega_res():
-    project_setting = common_utils.getMainConfig('vega_config')
-    gitutil.git_update(project_setting['project_c'])
-    gitutil.git_update(project_setting['project_lua'])
-    sh.cd(project_setting['mtool_path'] or '/data/work/src/dzm2/mtool')
-    mtool = sh.Command('env/bin/mtl')
-    mtool('luaalt', _out=sys.stdout, _err=sys.stdout)
-    has_update = svnutil.update(project_setting['project_res'])
-    if has_update:
-        # mtool('task_dev', '-g', 'vega', _out=sys.stdout, _err=sys.stdout)
-        mtool('ui', _out=sys.stdout, _err=sys.stdout)
-        mtool('res', _out=sys.stdout, _err=sys.stdout)
-
-    has_update = svnutil.update(project_setting['project_cfg'])
-    if has_update:
-        mtool('cfg', _out=sys.stdout, _err=sys.stdout)
-
-
-
-main.add_command(update_vega_res,name='v')
-
+from matrix.update import vega
+main.add_command(vega.update_vega_res,name='up')
+main.add_command(vega.switch_upgrade_path,name='sw')
+main.add_command(vega.switch_resources,name='sr')
+main.add_command(vega.rebuild_platform_asset,name='rb')
 
 from matrix.vega_pvp import server_log_analyse
 main.add_command(server_log_analyse.run,name='server_log')

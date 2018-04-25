@@ -13,7 +13,7 @@ master_config:
     mtool_path: /data/work/src/mtool_pc
 
 vega_config:
-    project_name: master
+    project_name: vega
     root_path: /data/work/src/VegaGame
     project_c: /data/work/src/VegaGame/vega_c
     project_lua: /data/work/src/VegaGame/vega_lua
