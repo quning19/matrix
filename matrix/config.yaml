@@ -15,12 +15,12 @@ master_config:
 vega_config:
     project_name: vega
     root_path: /data/work/src/VegaGame
-    project_c: /data/work/src/VegaGame/vega_c
+    project_c: /data/work/src/VegaGame/vegaC
     project_lua: /data/work/src/VegaGame/vega_lua
     project_res: /data/work/src/VegaGame/svn/frontend/Assets
     project_cfg: /data/work/src/VegaGame/svn/frontend/config
     res_path: /data/work/src/VegaGame/Resources
-    mtool_path: /data/work/src/mtool_vega
+    mtool_path: /data/work/src/mtool_py3
 
 TexturePackerProcessNumber: 8
 TexturePacker: "/usr/local/bin/TexturePacker"

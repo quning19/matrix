@@ -59,7 +59,7 @@ def update_vega_res(**options):
     if options['res'] or show_all:
         has_update = svnutil.update(project_setting['project_res'])
         if has_update:
-            mtool('ui', _out=sys.stdout, _err=sys.stdout)
+            mtool('ui', '-np', _out=sys.stdout, _err=sys.stdout)
             mtool('res', _out=sys.stdout, _err=sys.stdout)
 
     if options['config'] or show_all:

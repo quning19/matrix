@@ -30,7 +30,8 @@ def switch_upgrade_path(**options):
 
     if switched and not options['silence'] :
         # export assets
-        sh.cd('/data/work/src/dzm2/mtool')
+        # pylint: disable=no-member
+        sh.cd('/data/work/src/dzm2/mtool') 
         mtool = sh.Command('env/bin/mtl')
         if options['pvr']:
             mtool('res', '-P', _out=sys.stdout, _err=sys.stdout)
@@ -48,6 +49,7 @@ def create_ln(source):
     print src_path
     print dst_path
     if os.path.exists(dst_path):
+        # pylint: disable=no-member
         sh.rm(dst_path)
     ln = sh.Command('ln')
     ln('-s',src_path, dst_path, _out=sys.stdout, _err=sys.stdout)
@@ -57,4 +59,5 @@ def create_ln(source):
     return origin_source != source
 
 if __name__ == '__main__':
-    run()
+    # run()
+    pass
