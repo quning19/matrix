@@ -30,41 +30,16 @@ def update_vega_res(**options):
     if options['res'] or show_all:
         has_update = svnutil.update(project_setting['project_res'])
         if has_update:
-            # mtool('task_dev', '-g', 'vega', _out=sys.stdout, _err=sys.stdout)
-            mtool('ui', _out=sys.stdout, _err=sys.stdout)
-            mtool('res', _out=sys.stdout, _err=sys.stdout)
-
-    if options['config'] or show_all:
-        has_update = svnutil.update(project_setting['project_cfg'])
-        if has_update:
-            mtool('cfg', _out=sys.stdout, _err=sys.stdout)
-
-
-@click.command()
-@click.option('-c/-nc', '--cpp', default = False, help=u'C 代码库')
-@click.option('-l/-nl', '--lua', default = False, help=u'lua 代码')
-@click.option('-r/-nr', '--res', default = False, help=u'美术资源')
-@click.option('-f/-nf', '--config', default = False, help=u'配置文件')
-def update_vega_res(**options):
-    '''vega 代码、资源、配置更新'''
-    show_all = not (options['cpp'] or options['lua'] or options['res'] or options['config'])
-    project_setting = common_utils.getMainConfig('vega_config')
-    if options['cpp'] or show_all:
-        gitutil.git_update(project_setting['project_c'])
-    if options['lua'] or show_all:
-        gitutil.git_update(project_setting['project_lua'])
-        sh.cd(project_setting['mtool_path'] or '/data/work/src/dzm2/mtool')
-        mtool = sh.Command('env/bin/mtl')
-        mtool('luaalt', _out=sys.stdout, _err=sys.stdout)
-    if options['res'] or show_all:
-        has_update = svnutil.update(project_setting['project_res'])
-        if has_update:
+            sh.cd(project_setting['mtool_path'] or '/data/work/src/dzm2/mtool')
+            mtool = sh.Command('env/bin/mtl')
             mtool('ui', '-np', _out=sys.stdout, _err=sys.stdout)
             mtool('res', _out=sys.stdout, _err=sys.stdout)
 
     if options['config'] or show_all:
         has_update = svnutil.update(project_setting['project_cfg'])
         if has_update:
+            sh.cd(project_setting['mtool_path'] or '/data/work/src/dzm2/mtool')
+            mtool = sh.Command('env/bin/mtl')
             mtool('cfg', _out=sys.stdout, _err=sys.stdout)
 
 @click.command()
@@ -89,27 +64,25 @@ def switch_upgrade_path(**options):
         # export assets
 
 @click.command()
-@click.option('-n/-nc', '--normal', default = False, help=u'resources')
-@click.option('-d/-nd', '--dev', default = False, help=u'resources_dev')
+@click.option('-p', '--patch', default = '', help='配置文件读取路径')
 
 def switch_resources(**options):
+    '''vega 更改Resources引用'''
 
     project_setting = common_utils.getMainConfig('vega_config')
 
     src_path = project_setting['res_path']
     dst_path = os.path.join(project_setting['project_c'], 'Resources')
 
-    source = "normal"
-
-    if options['dev']:
-        src_path = src_path + "_dev"
-        source = "dev"
+    if options['patch'] != '':
+        src_path = src_path + '_' + options['patch']
 
     if os.path.exists(dst_path):
         sh.rm(dst_path)
     ln = sh.Command('ln')
     ln('-s',src_path, dst_path, _out=sys.stdout, _err=sys.stdout)
-    logger.info('switch to ' + source)
+
+    logger.info('switch to ' + os.path.split(src_path)[-1])
 
 
 @click.command()
