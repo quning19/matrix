@@ -1,0 +1,31 @@
+12-26 11:54:15[DEBUG] [0][BattleInfo] -------------------------------------------------------
+12-26 11:54:15[DEBUG] [0][BattleInfo] --
+12-26 11:54:15[DEBUG] [0][BattleInfo] -- [Warning] BattleInfo:initRandSeed seed is nil.
+12-26 11:54:15[DEBUG] [0][BattleInfo] --
+12-26 11:54:15[DEBUG] [0][BattleInfo] -------------------------------------------------------
+12-26 11:54:15[DEBUG] [0][BattleInfo] BattleInfo:initRandSeed: 554233
+12-26 11:54:15[DEBUG] [0]主场为true
+12-26 11:54:18[DEBUG] [58]revise skill Intro_ryu 40001 connectionTime
+12-26 11:54:18[DEBUG] [58]revise skill Intro_ryu 40001 connectionTime
+12-26 11:54:18[DEBUG] [58]revise skill Intro_ryu 40001 connectionTime
+12-26 11:54:20[DEBUG] [107]敌方绝招链开始
+12-26 11:54:20[DEBUG] [112]敌方绝招链结束
+12-26 11:54:20[DEBUG] [112]敌方绝招链开始
+12-26 11:54:27[DEBUG] [167]己方绝招链开始
+12-26 11:54:42[DEBUG] [387]己方绝招链结束
+12-26 11:54:42[DEBUG] [387]敌方绝招链结束
+12-26 11:54:42[DEBUG] [395]敌方绝招链开始
+12-26 11:54:48[DEBUG] [588]敌方绝招链结束
+12-26 11:54:52[DEBUG] [636]己方绝招链开始
+12-26 11:54:59[DEBUG] [830]敌方绝招链开始
+12-26 11:54:59[DEBUG] [830]revise skill Intro_juri 170903 connectionTime
+12-26 11:54:59[DEBUG] [830]revise skill Intro_juri 170903 connectionTime
+12-26 11:54:59[DEBUG] [830]revise skill Intro_juri 170903 connectionTime
+12-26 11:55:04[DEBUG] [891]敌方绝招链结束
+12-26 11:55:04[DEBUG] [891]敌方绝招链开始
+12-26 11:55:07[DEBUG] [942]己方绝招链结束
+12-26 11:55:07[DEBUG] [946]己方绝招链开始
+12-26 11:55:07[DEBUG] [962]己方绝招链结束
+12-26 11:55:07[DEBUG] [962]己方绝招链开始
+12-26 11:55:07[DEBUG] [962]己方绝招链结束
+12-26 11:55:07[DEBUG] [962]己方绝招链开始

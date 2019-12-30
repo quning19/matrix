@@ -1,0 +1,26 @@
+12-26 19:43:10[DEBUG] [0][BattleInfo] BattleInfo:initRandSeed: 985063
+12-26 19:43:10[DEBUG] [0]主场为true
+12-26 19:43:15[DEBUG] [39]己方绝招链开始
+12-26 19:43:21[DEBUG] [243]敌方绝招链开始
+12-26 19:43:22[DEBUG] [249]敌方绝招链结束
+12-26 19:43:22[DEBUG] [249]敌方绝招链开始
+12-26 19:43:22[DEBUG] [249]revise skill BfighterCamp_030101 20010112 connectionTime
+12-26 19:43:22[DEBUG] [249]revise skill BfighterCamp_030101 20010112 connectionTime
+12-26 19:43:22[DEBUG] [249]revise skill BfighterCamp_030101 20010112 connectionTime
+12-26 19:43:28[DEBUG] [394]己方绝招链结束
+12-26 19:43:28[DEBUG] [394]敌方绝招链结束
+12-26 19:43:32[DEBUG] [538]己方绝招链开始
+12-26 19:43:33[DEBUG] [581]己方绝招链结束
+12-26 19:58:03[DEBUG] [0][BattleInfo] BattleInfo:initRandSeed: 384163
+12-26 19:58:03[DEBUG] [0]主场为true
+12-26 19:58:23[DEBUG] [452]己方绝招链开始
+12-26 19:58:27[DEBUG] [603]revise skill BfighterBreak_020103 100050003 buffTrigger
+12-26 19:58:27[DEBUG] [603]敌方绝招链开始
+12-26 19:58:27[DEBUG] [603]revise skill BfighterBreak_020103 100050003 buffTrigger
+12-26 19:58:29[DEBUG] [687]revise skill BfighterBreak_020103 100050003 buffTrigger
+12-26 19:58:29[DEBUG] [689]己方绝招链结束
+12-26 19:58:29[DEBUG] [689]敌方绝招链结束
+12-26 19:58:29[DEBUG] [693]己方绝招链开始
+12-26 19:58:38[DEBUG] [1037]己方绝招链结束
+12-26 19:58:40[DEBUG] [1111]己方绝招链开始
+12-26 19:58:42[DEBUG] [1163]己方绝招链结束

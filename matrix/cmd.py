@@ -27,7 +27,12 @@ main.add_command(vega.switch_upgrade_path,name='sw')
 main.add_command(vega.switch_resources,name='sr')
 main.add_command(vega.rebuild_platform_asset,name='rb')
 
+
 from matrix.vega_pvp import server_log_analyse
 main.add_command(server_log_analyse.run,name='server_log')
+
+from matrix.utils import VideoTool
+main.add_command(VideoTool.cutVideo,name='video')
+
 if __name__ == '__main__':
     main()

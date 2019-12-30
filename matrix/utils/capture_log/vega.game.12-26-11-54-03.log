@@ -1,0 +1,1670 @@
+12-26 11:54:03[INFO] deviceMem == 7669016
+12-26 11:54:03[INFO] ========================================
+12-26 11:54:03[INFO] Game is running...
+12-26 11:54:03[DEBUG] TouchView:initialize
+12-26 11:54:03[DEBUG] <viewname>open view,view name is videoView
+12-26 11:54:03[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = uiopen
+-     2 = {
+-      1 = {
+-       viewName = videoView
+-      }
+-     }
+-    }
+12-26 11:54:03[DEBUG] -    var = {
+-     data = {"network":"WIFI"}
+-     retCode = 1002
+-    }
+12-26 11:54:03[DEBUG] record point 10010 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/core/view/login/VideoViewMediator..."]: in function 'recordPoint'
+	[string "script/vega/core/view/login/VideoViewMediator..."]: in function '_playEndCallBack'
+	[string "script/vega/utils/video/PCVideo.lua"]: in function 'playingEvent'
+	[string "script/vega/utils/video/VideoPlayer.lua"]: in function <[string "script/vega/utils/video/VideoPlayer.lua"]:0>
+12-26 11:54:03[INFO] ClientGuildStep:10010
+12-26 11:54:03[DEBUG] progress ---- >>>0.000000
+12-26 11:54:03[DEBUG] progress ---- >>>0.027665
+12-26 11:54:03[DEBUG] <ViewStatFacade>[upload] {"view":"VideoViewMediator"}
+12-26 11:54:04[DEBUG] progress ---- >>>0.030778
+12-26 11:54:04[DEBUG] progress ---- >>>0.051138
+12-26 11:54:04[DEBUG] progress ---- >>>0.055928
+12-26 11:54:04[DEBUG] progress ---- >>>0.071018
+12-26 11:54:04[DEBUG] progress ---- >>>0.099281
+12-26 11:54:04[DEBUG] progress ---- >>>0.100000
+12-26 11:54:04[INFO] <battleloading>BaseloadingCost-FuncList===1
+12-26 11:54:04[INFO] createMainTask cost = 0
+12-26 11:54:04[DEBUG] progress ---- >>>0.000000
+12-26 11:54:04[ERROR]  can't find fileName:asset/anim/chuanchengjihanzhaoimage.plist
+12-26 11:54:04[ERROR]  can't find fileName:asset/anim/shuzidiaoxuexinimage.plist
+12-26 11:54:04[ERROR]  can't find fileName:asset/anim/douhunchuxianimage.plist
+12-26 11:54:04[DEBUG] progress ---- >>>0.114917
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/suduxian.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/zhuijijiuyi.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/kojiu.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/shijianhaojin.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/jiangliboci.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/zhuijipingfen.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/buffxiaokuaishi.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/jiaoxiaguangquan.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/zhandouanniudianji.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/chuanchengjihanzhao.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/fight.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/juezhaoquyuguangxiaoshi.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/lengquedianxin.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/piaozidhyi.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/jbdl.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/shuzidiaoxuexin.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/gongjishangshengxinyi.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/xuetiaodonghua.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/qianyaojishiqi.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/xuetiaoyanshixinyi.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/douchangtip.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/douhunchuxian.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/guanqiamingzi.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/shanhong.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/nengliangxiaotiaojiu.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/kongqiqiang.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/zhandoucaozuoanniu.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/bosssuoding.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/nengliangtiaoshi.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/qiangdichuxian.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/gongdoushengli.bobj
+12-26 11:54:04[DEBUG] progress ---- >>>0.408287
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/zidanshijian.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/mapshenkadazhan.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/bptiaojiuyi.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/aoyianniudh.bobj
+12-26 11:54:04[INFO] <battleloading>preloadMovieClipAsync_mclib:asset/anim/nengliangkuaidi.bobj
+12-26 11:54:04[DEBUG] progress ---- >>>0.453039
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsyncOnlyAtlas finish:f_ryu_eff_back
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:f_ryu_eff_back
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsyncOnlyAtlas finish:f_ken_shadow
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:f_ken_shadow
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsyncOnlyAtlas finish:f_ryu_shadow
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:f_ryu_shadow
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsyncOnlyAtlas finish:f_mechanicalseth_shadow
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:f_mechanicalseth_shadow
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsyncOnlyAtlas finish:f_chunli_shadow
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:f_chunli_shadow
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsyncOnlyAtlas finish:f_chunli_eff_back
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:f_chunli_eff_back
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsyncOnlyAtlas finish:f_juri_shadow
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:f_juri_shadow
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsyncOnlyAtlas finish:f_ryu_eff
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:f_ryu_eff
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsyncOnlyAtlas finish:f_mechanicalseth_eff
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:f_mechanicalseth_eff
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsyncOnlyAtlas finish:f_juri_eff
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:f_juri_eff
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsyncOnlyAtlas finish:f_chunli_eff
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:f_chunli_eff
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsyncOnlyAtlas finish:f_mechanicalseth_act
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:f_mechanicalseth_act
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsyncOnlyAtlas finish:f_ken_eff
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:f_ken_eff
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsyncOnlyAtlas finish:f_juri_act
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:f_juri_act
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsyncOnlyAtlas finish:f_ryu_act
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:f_ryu_act
+12-26 11:54:04[INFO] <battleloading>addImageAsync finish:asset/spine/f_mechanicalseth_act_cm.png
+12-26 11:54:04[INFO] <battleloading>addImageAsync finish:asset/ui/__font/font_battle_damage.png
+12-26 11:54:04[INFO] <battleloading>addImageAsync finish:asset/spine/f_chunli_act_cm.png
+12-26 11:54:04[INFO] <battleloading>addImageAsync finish:asset/spine/f_ryu_act_cm.png
+12-26 11:54:04[INFO] <battleloading>addImageAsync finish:asset/ui/__font/font_battle_damagecrit.png
+12-26 11:54:04[INFO] <battleloading>addImageAsync finish:asset/ui/__font/txt_battle_total_damage.png
+12-26 11:54:04[INFO] <battleloading>addImageAsync finish:asset/spine/f_ken_act_cm.png
+12-26 11:54:04[INFO] <battleloading>addImageAsync finish:asset/ui/__font/font_battle_health.png
+12-26 11:54:04[INFO] <battleloading>addImageAsync finish:asset/spine/f_juri_act_cm.png
+12-26 11:54:04[INFO] <battleloading>addImageAsync finish:asset/ui/battle/base.png
+12-26 11:54:04[INFO] <battleloading>BattleResManager:prebuildCSBPool,name:asset/ui/battle/component/battleHeadBuff.csb
+12-26 11:54:04[INFO] <battleloading>BattleResManager:prebuildCSBPool,name:asset/ui/battle/battleSuperCountDown.csb
+12-26 11:54:04[INFO] <battleloading>BattleResManager:prebuildCSBPool,name:asset/ui/battle/component/battleFont/battleFontDamageCrit.csb
+12-26 11:54:04[INFO] <battleloading>BattleResManager:prebuildCSBPool,name:asset/ui/battle/component/heroCell/battlePveRightBossHeadComponent.csb
+12-26 11:54:04[INFO] <battleloading>BattleResManager:prebuildCSBPool,name:asset/ui/battle/battleWordDodge.csb
+12-26 11:54:04[INFO] <battleloading>BattleResManager:prebuildCSBPool,name:asset/ui/battle/hp/battleBoss.csb
+12-26 11:54:04[INFO] <battleloading>BattleResManager:prebuildCSBPool,name:asset/ui/dialog/dialogInterlude.csb
+12-26 11:54:04[INFO] <battleloading>BattleResManager:prebuildCSBPool,name:asset/ui/battle/component/TalentSkill.csb
+12-26 11:54:04[DEBUG] progress ---- >>>0.781215
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsyncOnlyAtlas finish:f_ken_act
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:f_ken_act
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsyncOnlyAtlas finish:f_chunli_act
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:f_chunli_act
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:g_hit1_back
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:g_hitthunder
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:g_hitsoul
+12-26 11:54:04[INFO] <battleloading>BattleResManager:prebuildSpinePool,name:f_vega_eff_back
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:f_vega_eff_back
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:supercombo_ken_wenzi
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:supercombo_chunli
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:eff_chunli_ultracombo
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:g_hit3_front
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:g_hit3_back
+12-26 11:54:04[INFO] <battleloading>BattleResManager:prebuildSpinePool,name:invisiblewall
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:invisiblewall
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:g_hitfire
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:supercombo_ryuken
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:g_hitink
+12-26 11:54:04[INFO] <battleloading>BattleResManager:prebuildSpinePool,name:f_vega_eff
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:f_vega_eff
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:g_hit1_front
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:douken_ryu
+12-26 11:54:04[INFO] <battleloading>BattleResManager:prebuildSpinePool,name:g_defence1
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:g_defence1
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:g_attackflash
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:eff_juri_ultracombo
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:douken_ken
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:supercombo_chunli_wenzi
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:supercombo_ryu_wenzi
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:g_whiteflash
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:supercombo_ryu
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:supercombo_ken
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:douken_chunli
+12-26 11:54:04[INFO] <battleloading>BattleResManager:prebuildSpinePool,name:f_vega_act
+12-26 11:54:04[INFO] <battleloading>preLoadSpineAsync finish:f_vega_act
+12-26 11:54:04[INFO] <battleloading>BattleResManager:prebuildCSBPool,name:asset/ui/battle/component/HpAndEnergyComponent_update.csb
+12-26 11:54:04[INFO] <battleloading>BattleResManager:prebuildCSBPool,name:asset/ui/dialog/dialogLayer.csb
+12-26 11:54:04[DEBUG] progress ---- >>>0.945304
+12-26 11:54:04[INFO] <battleloading>BattleResManager:prebuildCSBPool,name:asset/ui/battle/battleBossView.csb
+12-26 11:54:04[INFO] <battleloading>BattleResManager:prebuildCSBPool,name:asset/ui/battle/component/battleSuperSkillBtn_new.csb
+12-26 11:54:04[INFO] <battleloading>BattleResManager:prebuildCSBPool,name:asset/ui/battle/battlePvpUI.csb
+12-26 11:54:04[DEBUG] progress ---- >>>0.960221
+12-26 11:54:04[INFO] <battleloading>BattleResManager:prebuildCSBPool,name:asset/ui/battle/component/battleFont/battleFontHealth.csb
+12-26 11:54:04[INFO] <battleloading>BattleResManager:prebuildCSBPool,name:asset/ui/battle/battlePveUI.csb
+12-26 11:54:04[INFO] <battleloading>BattleResManager:prebuildCSBPool,name:asset/ui/battle/battleLabel.csb
+12-26 11:54:04[INFO] <battleloading>BattleResManager:prebuildCSBPool,name:asset/ui/battle/component/HpComponent_update.csb
+12-26 11:54:04[INFO] <battleloading>BattleResManager:prebuildCSBPool,name:asset/ui/battle/battleWordDunt.csb
+12-26 11:54:04[INFO] <battleloading>BattleResManager:prebuildCSBPool,name:asset/ui/battle/battleWordDefence.csb
+12-26 11:54:04[INFO] <battleloading>BattleResManager:prebuildCSBPool,name:asset/ui/battle/battleWordAntiDodge.csb
+12-26 11:54:04[INFO] <battleloading>BattleResManager:prebuildCSBPool,name:asset/ui/battle/component/battleFont/battleFontDamage.csb
+12-26 11:54:04[DEBUG] progress ---- >>>1.000000
+12-26 11:54:04[INFO] <battleloading>BaseloadingCost-preloadRes===1
+12-26 11:54:04[DEBUG] progress ---- >>>1.000000
+12-26 11:54:12[DEBUG] screen click---->>x: 1131.1297607422 y: 219.42375183105
+12-26 11:54:15[DEBUG] screen click---->>x: 1108.6492919922 y: 584.45330810547
+12-26 11:54:15[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = uiclose
+-     2 = {
+-      1 = {
+-       viewName = videoView
+-      }
+-     }
+-    }
+12-26 11:54:15[INFO] close view ,view name is videoView
+12-26 11:54:15[DEBUG] record point 10040 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/core/view/login/VideoViewMediator..."]: in function 'onSkipClicked'
+	[string "script/vega/core/view/login/VideoViewMediator..."]: in function ''
+	[string "script/gamebase/init.lua"]: in function <[string "script/gamebase/init.lua"]:0>
+12-26 11:54:15[INFO] ClientGuildStep:10040
+12-26 11:54:15[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = widegetTouch
+-     2 = {
+-     }
+-    }
+12-26 11:54:15[DEBUG] TouchView:initialize
+12-26 11:54:15[DEBUG] <viewname>open view,view name is battlemediator
+12-26 11:54:15[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = uiopen
+-     2 = {
+-      1 = {
+-       viewName = battlemediator
+-      }
+-     }
+-    }
+12-26 11:54:15[DEBUG] -----isHomeMatch-----true
+12-26 11:54:15[DEBUG] -----HeadPveCell-----ryu
+12-26 11:54:15[DEBUG] -----HeadPveCell-----ken
+12-26 11:54:15[DEBUG] -----HeadPveCell-----chunli
+12-26 11:54:15[DEBUG] record point 10050 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'runEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'checkAndRunEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'onEventOver'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'runEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'checkAndRunEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/logic/framework/utils/Batt..."]: in function 'dispatchEvent'
+	[string "script/vega/battle/render/controller/BattlePv..."]: in function 'enterBattle'
+	[string "script/vega/battle/render/controller/BattleCo..."]: in function 'enterBattle'
+	[string "script/vega/battle/render/Director.lua"]: in function 'enterBattle'
+	[string "script/vega/battle/ui/BattleSceneMediator.lua"]: in function 'doInitAndEnterBattle'
+	[string "script/vega/battle/ui/BattleSceneMediator.lua"]: in function 'enterBattleAndInitCallBack'
+	[string "script/vega/core/view/guide/PrologueGuideDeta..."]: in function 'preBattleCallback'
+	[string "script/vega/battle/ui/BattleSceneMediator.lua"]: in function 'runPreBattleCallback'
+	[string "script/vega/battle/ui/BattleSceneMediator.lua"]: in function 'enterWithData'
+	[string "script/gamebase/game/command/SceneCommands.lua"]: in function <[string "script/gamebase/game/command/SceneCommands.lua"]:0>
+	[string "script/engine/extends/NodeExt.lua"]: in function <[string "script/engine/extends/NodeExt.lua"]:0>
+12-26 11:54:15[INFO] ClientGuildStep:10050
+12-26 11:54:15[DEBUG] record ------------------------record_10050------------------------------------------------------------------------------------
+12-26 11:54:15[DEBUG] -    ----开始执行命令---- = {
+-     1 = s0_0_0
+-     3 = init
+-     4 = {
+-      path = map_mapxunlianchang
+-      isInheritBackGround = true
+-      isSwhichBattleField = false
+-      isShrinkUI = true
+-     }
+-     pos = {
+-      1 = {
+-       y = 0
+-       x = 0
+-      }
+-     }
+-    }
+12-26 11:54:15[DEBUG] -    ----开始执行命令---- = {
+-     1 = s0_0_1
+-     2 = eff0
+-     3 = addEffect
+-     4 = {
+-      path = ska
+-      isScreenMiddle = true
+-     }
+-     8 = 1000
+-     13 = 2000
+-     14 = idle
+-     17 = 2.6
+-     19 = 0
+-     20 = 1
+-     pos = {
+-      1 = {
+-       y = 0
+-       x = 0
+-      }
+-     }
+-    }
+12-26 11:54:15[DEBUG] -    ----开始执行命令---- = {
+-     1 = s0_0_2
+-     2 = eff1
+-     3 = addEffect
+-     4 = {
+-      path = skb
+-      isScreenMiddle = true
+-     }
+-     8 = 999
+-     13 = 2000
+-     14 = idle
+-     17 = 2.6
+-     19 = 0
+-     20 = 1
+-     pos = {
+-      1 = {
+-       y = 0
+-       x = 0
+-      }
+-     }
+-    }
+12-26 11:54:15[DEBUG] -    ----开始执行命令---- = {
+-     1 = s0_0_3
+-     3 = wait
+-     pos = {
+-      1 = {
+-       y = 0
+-       x = 0
+-      }
+-     }
+-     13 = 1400
+-    }
+12-26 11:54:15[DEBUG] <ViewStatFacade>[upload] {"battleSceneTag":"Intro02","view":"BattleEmptyMediator"}
+12-26 11:54:16[DEBUG] record point 10020 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/core/view/login/VideoViewMediator..."]: in function ''
+	[string "script/gamebase/schedule/LuaScheduler.lua"]: in function <[string "script/gamebase/schedule/LuaScheduler.lua"]:0>
+12-26 11:54:16[INFO] ClientGuildStep:10020
+12-26 11:54:16[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = zha_aoyianniudh
+-     }
+-    }
+12-26 11:54:16[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = zha_aoyianniudh
+-     }
+-    }
+12-26 11:54:16[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = zha_aoyianniudh
+-     }
+-    }
+12-26 11:54:16[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = main_zhuijipingfen
+-     }
+-    }
+12-26 11:54:17[DEBUG] -    ----开始执行命令---- = {
+-     1 = s0_0_4
+-     3 = over
+-     4 = {
+-      destroy = false
+-     }
+-     pos = {
+-      1 = {
+-       y = 0
+-       x = 0
+-      }
+-     }
+-     13 = 0
+-    }
+12-26 11:54:17[DEBUG] record point 10060 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'runEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'checkAndRunEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'onEventOver'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function '_endCallBack'
+	[string "script/vega/battle/view/drama/DramaDriver.lua"]: in function '__dramaOver'
+	[string "script/vega/battle/view/drama/DramaDriver.lua"]: in function <[string "script/vega/battle/view/drama/DramaDriver.lua"]:0>
+	[string "script/vega/battle/logic/framework/utils/Batt..."]: in function 'dispatchEvent'
+	[string "script/vega/battle/view/drama/orders/over.lua"]: in function ''
+	[string "script/vega/battle/render/schedule/part/Sched..."]: in function '_callback'
+	[string "script/gamebase/schedule/LuaScheduler.lua"]: in function '_doCallback'
+	[string "script/gamebase/schedule/LuaScheduler.lua"]: in function 'tick'
+	[string "script/vega/battle/render/schedule/part/Sched..."]: in function '_tick'
+	[string "script/vega/battle/render/schedule/part/Sched..."]: in function 'update'
+	[string "script/vega/battle/render/schedule/ScheduleDr..."]: in function 'update'
+	[string "script/vega/battle/render/BattleRender.lua"]: in function 'driverUpdate'
+	[string "script/vega/battle/BattleContext.lua"]: in function 'tickRender'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function 'tick'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function <[string "script/vega/battle/driver/BattleBaseDriver.lua"]:0>
+	[C]: in function 'xpcall'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function <[string "script/vega/battle/driver/BattleBaseDriver.lua"]:0>
+12-26 11:54:17[INFO] ClientGuildStep:10060
+12-26 11:54:17[DEBUG] record ------------------------record_10060------------------------------------------------------------------------------------
+12-26 11:54:18[DEBUG] record point 10070 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'runEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'checkAndRunEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/logic/framework/utils/Batt..."]: in function 'dispatchEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'addBatchEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/logic/framework/utils/Batt..."]: in function 'dispatchEvent'
+	[string "script/vega/battle/render/BattleLogic.lua"]: in function 'startBattle'
+	[string "script/vega/battle/render/controller/BattlePv..."]: in function 'onEntryFilmDone'
+	...
+	[string "script/gamebase/schedule/LuaScheduler.lua"]: in function 'tick'
+	[string "script/vega/battle/render/schedule/part/Sched..."]: in function '_tick'
+	[string "script/vega/battle/render/schedule/part/Sched..."]: in function 'update'
+	[string "script/vega/battle/render/schedule/ScheduleDr..."]: in function 'update'
+	[string "script/vega/battle/render/BattleRender.lua"]: in function 'driverUpdate'
+	[string "script/vega/battle/BattleContext.lua"]: in function 'tickRender'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function 'tick'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function <[string "script/vega/battle/driver/BattleBaseDriver.lua"]:0>
+	[C]: in function 'xpcall'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function <[string "script/vega/battle/driver/BattleBaseDriver.lua"]:0>
+12-26 11:54:18[INFO] ClientGuildStep:10070
+12-26 11:54:18[DEBUG] record ------------------------record_10070------------------------------------------------------------------------------------
+12-26 11:54:19[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = main_fight
+-     }
+-    }
+12-26 11:54:19[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = diaoxue_shuzidiaoxuexin
+-     }
+-    }
+12-26 11:54:20[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = diaoxue_shuzidiaoxuexin
+-     }
+-    }
+12-26 11:54:20[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = diaoxue_shuzidiaoxuexin
+-     }
+-    }
+12-26 11:54:20[DEBUG] record point 10100 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'runEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'checkAndRunEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/logic/framework/utils/Batt..."]: in function 'dispatchEvent'
+	[string "script/vega/battle/workflow/RenderCmdBus.lua"]: in function <[string "script/vega/battle/workflow/RenderCmdBus.lua"]:0>
+	[C]: in function ''
+	[string "script/vega/battle/workflow/RenderCmdBus.lua"]: in function 'sendRenderCmd'
+	[string "script/vega/battle/BattleContext.lua"]: in function 'tickRender'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function 'tick'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function <[string "script/vega/battle/driver/BattleBaseDriver.lua"]:0>
+	[C]: in function 'xpcall'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function <[string "script/vega/battle/driver/BattleBaseDriver.lua"]:0>
+12-26 11:54:20[INFO] ClientGuildStep:10100
+12-26 11:54:20[DEBUG] record ------------------------record_10100------------------------------------------------------------------------------------
+12-26 11:54:21[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = guangbiaosongshou_nengliangtiaoshi
+-     }
+-    }
+12-26 11:54:22[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = kBattleTrigger2
+-     2 = {
+-      1 = {
+-       globalPos = {
+-        1 = {
+-         y = 105.35260009766
+-         x = 1110.3530273438
+-        }
+-       }
+-       id = battle_000102
+-       triggerType = 2
+-      }
+-     }
+-    }
+12-26 11:54:22[DEBUG] record point 10110 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function 'refreshGuideUI'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function 'enterWithData'
+	[string "script/vega/core/controller/guide/GuideComman..."]: in function 'execute'
+	[string "script/gamebase/legs/core/CommandMap.lua"]: in function 'execute'
+	[string "script/gamebase/legs/core/CommandMap.lua"]: in function '_commandExecutor'
+	[string "script/gamebase/legs/core/CommandMap.lua"]: in function <[string "script/gamebase/legs/core/CommandMap.lua"]:0>
+	[C]: in function 'dispatch'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function 'battleTrigger2'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function 'uiLogicNotify'
+	[string "script/vega/core/view/guide/GuideFacade.lua"]: in function 'refreshGuideLayerEvent'
+	...
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/logic/framework/utils/Batt..."]: in function 'dispatchEvent'
+	[string "script/vega/battle/workflow/RenderCmdBus.lua"]: in function <[string "script/vega/battle/workflow/RenderCmdBus.lua"]:0>
+	[C]: in function ''
+	[string "script/vega/battle/workflow/RenderCmdBus.lua"]: in function 'sendRenderCmd'
+	[string "script/vega/battle/BattleContext.lua"]: in function 'tickRender'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function 'tick'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function <[string "script/vega/battle/driver/BattleBaseDriver.lua"]:0>
+	[C]: in function 'xpcall'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function <[string "script/vega/battle/driver/BattleBaseDriver.lua"]:0>
+12-26 11:54:22[INFO] ClientGuildStep:10110
+12-26 11:54:22[DEBUG] <Guide>-    curr exec guide step = {
+-     1 = battle_000102
+-     2 = 10110
+-     3 = 10120
+-     4 = {
+-      1 = {
+-       y = 100
+-       x = 480
+-      }
+-     }
+-     5 = pic_tutorial_hero_yuriko
+-     6 = {
+-      1 = 点击释放<font color='#ff2500'>必杀技</font>，发起进攻！
+-     }
+-     8 = {
+-      height = 100
+-      width = 100
+-     }
+-     9 = {
+-      1 = 50
+-     }
+-     14 = battlemediator
+-     19 = you
+-     23 = EVT_GUIDE_BATTLE_STEP_DONE
+-     notifyCallBack = function: 0xbc6ffde0
+-     uiPos = {
+-      y = 105.35260009766
+-      x = 1110.3530273438
+-     }
+-    }
+12-26 11:54:23[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = qipaodh_yindaoyuanqipao
+-     }
+-    }
+12-26 11:54:23[DEBUG] <Guide>-    --->>currGuide: = {
+-     1 = battle_000102
+-     2 = 10110
+-     3 = 10120
+-     4 = {
+-      1 = {
+-       y = 100
+-       x = 480
+-      }
+-     }
+-     5 = pic_tutorial_hero_yuriko
+-     6 = {
+-      1 = 点击释放<font color='#ff2500'>必杀技</font>，发起进攻！
+-     }
+-     8 = {
+-      height = 100
+-      width = 100
+-     }
+-     9 = {
+-      1 = 50
+-     }
+-     14 = battlemediator
+-     19 = you
+-     23 = EVT_GUIDE_BATTLE_STEP_DONE
+-     notifyCallBack = function: 0xbc6ffde0
+-     uiPos = {
+-      y = 105.35260009766
+-      x = 1110.3530273438
+-     }
+-    }
+12-26 11:54:23[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = lengquedianlan_nengliangtiaoshi
+-     }
+-    }
+12-26 11:54:23[DEBUG] <Guide>-    --->>currGuide: = {
+-     1 = battle_000102
+-     2 = 10110
+-     3 = 10120
+-     4 = {
+-      1 = {
+-       y = 100
+-       x = 480
+-      }
+-     }
+-     5 = pic_tutorial_hero_yuriko
+-     6 = {
+-      1 = 点击释放<font color='#ff2500'>必杀技</font>，发起进攻！
+-     }
+-     8 = {
+-      height = 100
+-      width = 100
+-     }
+-     9 = {
+-      1 = 50
+-     }
+-     14 = battlemediator
+-     19 = you
+-     23 = EVT_GUIDE_BATTLE_STEP_DONE
+-     notifyCallBack = function: 0xbc6ffde0
+-     uiPos = {
+-      y = 105.35260009766
+-      x = 1110.3530273438
+-     }
+-    }
+12-26 11:54:27[DEBUG] cancle ForbidClickstack traceback:
+	[string "script/gamebase/init.lua"]: in function 'gSetForbidClick'
+	[string "script/gamebase/init.lua"]: in function <[string "script/gamebase/init.lua"]:0>
+12-26 11:54:27[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = widegetTouch
+-     2 = {
+-     }
+-    }
+12-26 11:54:27[DEBUG] <Guide>-    --->>currGuide: = {
+-     1 = battle_000102
+-     2 = 10110
+-     3 = 10120
+-     4 = {
+-      1 = {
+-       y = 100
+-       x = 480
+-      }
+-     }
+-     5 = pic_tutorial_hero_yuriko
+-     6 = {
+-      1 = 点击释放<font color='#ff2500'>必杀技</font>，发起进攻！
+-     }
+-     8 = {
+-      height = 100
+-      width = 100
+-     }
+-     9 = {
+-      1 = 50
+-     }
+-     14 = battlemediator
+-     19 = you
+-     23 = EVT_GUIDE_BATTLE_STEP_DONE
+-     notifyCallBack = function: 0xbc6ffde0
+-     uiPos = {
+-      y = 105.35260009766
+-      x = 1110.3530273438
+-     }
+-    }
+12-26 11:54:27[DEBUG] record point 10120 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/core/view/guide/GuideFacade.lua"]: in function 'UserGuideClickPoint'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function 'pointClick'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function <[string "script/vega/core/view/guide/GuideLayerMediato..."]:0>
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function 'uiLogicNotify'
+	[string "script/vega/core/view/guide/GuideFacade.lua"]: in function 'refreshGuideLayerEvent'
+	[string "script/vega/core/view/guide/GuideFacade.lua"]: in function 'DispatchGuideEvent'
+	[string "script/vega/battle/ui/componment/operate/skil..."]: in function ''
+	[string "script/vega/battle/ui/button/BaseButton.lua"]: in function ''
+	[string "script/gamebase/init.lua"]: in function <[string "script/gamebase/init.lua"]:0>
+12-26 11:54:27[INFO] ClientGuildStep:10120
+12-26 11:54:27[DEBUG] record point 10120 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function '_notifyCall'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function 'pointClick'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function <[string "script/vega/core/view/guide/GuideLayerMediato..."]:0>
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function 'uiLogicNotify'
+	[string "script/vega/core/view/guide/GuideFacade.lua"]: in function 'refreshGuideLayerEvent'
+	[string "script/vega/core/view/guide/GuideFacade.lua"]: in function 'DispatchGuideEvent'
+	[string "script/vega/battle/ui/componment/operate/skil..."]: in function ''
+	[string "script/vega/battle/ui/button/BaseButton.lua"]: in function ''
+	[string "script/gamebase/init.lua"]: in function <[string "script/gamebase/init.lua"]:0>
+12-26 11:54:27[INFO] ClientGuildStep:10120
+12-26 11:54:27[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = bisha_zhandouanniudianji
+-     }
+-    }
+12-26 11:54:27[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:54:28[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = lengquedianlan_nengliangtiaoshi
+-     }
+-    }
+12-26 11:54:28[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:54:30[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = kBattleTrigger2
+-     2 = {
+-      1 = {
+-       globalPos = {
+-        1 = {
+-         y = 206.35488891602
+-         x = 1203.65234375
+-        }
+-       }
+-       id = battle_000103
+-       triggerType = 2
+-      }
+-     }
+-    }
+12-26 11:54:30[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:54:30[DEBUG] record point 10130 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function 'refreshGuideUI'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function 'enterWithData'
+	[string "script/vega/core/controller/guide/GuideComman..."]: in function 'execute'
+	[string "script/gamebase/legs/core/CommandMap.lua"]: in function 'execute'
+	[string "script/gamebase/legs/core/CommandMap.lua"]: in function '_commandExecutor'
+	[string "script/gamebase/legs/core/CommandMap.lua"]: in function <[string "script/gamebase/legs/core/CommandMap.lua"]:0>
+	[C]: in function 'dispatch'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function 'battleTrigger2'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function 'uiLogicNotify'
+	[string "script/vega/core/view/guide/GuideFacade.lua"]: in function 'refreshGuideLayerEvent'
+	...
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/logic/framework/utils/Batt..."]: in function 'dispatchEvent'
+	[string "script/vega/battle/workflow/RenderCmdBus.lua"]: in function <[string "script/vega/battle/workflow/RenderCmdBus.lua"]:0>
+	[C]: in function ''
+	[string "script/vega/battle/workflow/RenderCmdBus.lua"]: in function 'sendRenderCmd'
+	[string "script/vega/battle/BattleContext.lua"]: in function 'tickRender'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function 'tick'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function <[string "script/vega/battle/driver/BattleBaseDriver.lua"]:0>
+	[C]: in function 'xpcall'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function <[string "script/vega/battle/driver/BattleBaseDriver.lua"]:0>
+12-26 11:54:30[INFO] ClientGuildStep:10130
+12-26 11:54:30[DEBUG] <Guide>-    curr exec guide step = {
+-     1 = battle_000103
+-     2 = 10130
+-     3 = 10140
+-     4 = {
+-      1 = {
+-       y = 100
+-       x = 480
+-      }
+-     }
+-     5 = pic_tutorial_hero_yuriko
+-     6 = {
+-      1 = 抓住机会，释放<font color='#ff2500'>绝招</font>进行<font color='#ff2500'>必杀追击</font>。
+-     }
+-     8 = {
+-      height = 80
+-      width = 80
+-     }
+-     9 = {
+-      1 = 40
+-     }
+-     14 = battlemediator
+-     19 = you
+-     23 = EVT_GUIDE_BATTLE_STEP_DONE
+-     notifyCallBack = function: 0xbb5c4e80
+-     uiPos = {
+-      y = 206.35488891602
+-      x = 1203.65234375
+-     }
+-    }
+12-26 11:54:32[DEBUG] cancle ForbidClickstack traceback:
+	[string "script/gamebase/init.lua"]: in function 'gSetForbidClick'
+	[string "script/gamebase/init.lua"]: in function <[string "script/gamebase/init.lua"]:0>
+12-26 11:54:32[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = widegetTouch
+-     2 = {
+-     }
+-    }
+12-26 11:54:32[DEBUG] <Guide>-    --->>currGuide: = {
+-     1 = battle_000103
+-     2 = 10130
+-     3 = 10140
+-     4 = {
+-      1 = {
+-       y = 100
+-       x = 480
+-      }
+-     }
+-     5 = pic_tutorial_hero_yuriko
+-     6 = {
+-      1 = 抓住机会，释放<font color='#ff2500'>绝招</font>进行<font color='#ff2500'>必杀追击</font>。
+-     }
+-     8 = {
+-      height = 80
+-      width = 80
+-     }
+-     9 = {
+-      1 = 40
+-     }
+-     14 = battlemediator
+-     19 = you
+-     23 = EVT_GUIDE_BATTLE_STEP_DONE
+-     notifyCallBack = function: 0xbb5c4e80
+-     uiPos = {
+-      y = 206.35488891602
+-      x = 1203.65234375
+-     }
+-    }
+12-26 11:54:32[DEBUG] record point 10140 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/core/view/guide/GuideFacade.lua"]: in function 'UserGuideClickPoint'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function 'pointClick'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function <[string "script/vega/core/view/guide/GuideLayerMediato..."]:0>
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function 'uiLogicNotify'
+	[string "script/vega/core/view/guide/GuideFacade.lua"]: in function 'refreshGuideLayerEvent'
+	[string "script/vega/core/view/guide/GuideFacade.lua"]: in function 'DispatchGuideEvent'
+	[string "script/vega/battle/ui/componment/operate/skil..."]: in function ''
+	[string "script/vega/battle/ui/button/BaseButton.lua"]: in function ''
+	[string "script/gamebase/init.lua"]: in function <[string "script/gamebase/init.lua"]:0>
+12-26 11:54:32[INFO] ClientGuildStep:10140
+12-26 11:54:32[DEBUG] record point 10140 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function '_notifyCall'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function 'pointClick'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function <[string "script/vega/core/view/guide/GuideLayerMediato..."]:0>
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function 'uiLogicNotify'
+	[string "script/vega/core/view/guide/GuideFacade.lua"]: in function 'refreshGuideLayerEvent'
+	[string "script/vega/core/view/guide/GuideFacade.lua"]: in function 'DispatchGuideEvent'
+	[string "script/vega/battle/ui/componment/operate/skil..."]: in function ''
+	[string "script/vega/battle/ui/button/BaseButton.lua"]: in function ''
+	[string "script/gamebase/init.lua"]: in function <[string "script/gamebase/init.lua"]:0>
+12-26 11:54:32[INFO] ClientGuildStep:10140
+12-26 11:54:32[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = anniulanquan_juezhaoquyuguangxiaoshi
+-     }
+-    }
+12-26 11:54:32[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:54:32[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = anniu_juezhaoquyuguangxiaoshi
+-     }
+-    }
+12-26 11:54:32[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:54:32[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = diaoxue_shuzidiaoxuexin
+-     }
+-    }
+12-26 11:54:32[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:54:32[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = huoa01_juezhaoquyuguangxiaoshi
+-     }
+-    }
+12-26 11:54:32[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:54:32[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = juezhao_zhandouanniudianji
+-     }
+-    }
+12-26 11:54:32[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:54:32[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = zengzhangdianhong_nengliangtiaoshi
+-     }
+-    }
+12-26 11:54:32[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:54:33[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = xiaoshi_buffxiaokuaishi
+-     }
+-    }
+12-26 11:54:33[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:54:33[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = kBattleTrigger2
+-     2 = {
+-      1 = {
+-       globalPos = {
+-        1 = {
+-         y = 184.64068603516
+-         x = 1103.59375
+-        }
+-       }
+-       id = battle_000104
+-       triggerType = 2
+-      }
+-     }
+-    }
+12-26 11:54:33[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:54:33[DEBUG] <Guide>-    curr exec guide step = {
+-     1 = battle_000104
+-     3 = 10160
+-     4 = {
+-      1 = {
+-       y = 100
+-       x = 480
+-      }
+-     }
+-     8 = {
+-      height = 80
+-      width = 80
+-     }
+-     9 = {
+-      1 = 40
+-     }
+-     14 = battlemediator
+-     23 = EVT_GUIDE_BATTLE_STEP_DONE
+-     notifyCallBack = function: 0xbb7bd040
+-     uiPos = {
+-      y = 184.64068603516
+-      x = 1103.59375
+-     }
+-     19 = you
+-    }
+12-26 11:54:35[DEBUG] cancle ForbidClickstack traceback:
+	[string "script/gamebase/init.lua"]: in function 'gSetForbidClick'
+	[string "script/gamebase/init.lua"]: in function <[string "script/gamebase/init.lua"]:0>
+12-26 11:54:35[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = widegetTouch
+-     2 = {
+-     }
+-    }
+12-26 11:54:35[DEBUG] <Guide>-    --->>currGuide: = {
+-     1 = battle_000104
+-     3 = 10160
+-     4 = {
+-      1 = {
+-       y = 100
+-       x = 480
+-      }
+-     }
+-     8 = {
+-      height = 80
+-      width = 80
+-     }
+-     9 = {
+-      1 = 40
+-     }
+-     14 = battlemediator
+-     23 = EVT_GUIDE_BATTLE_STEP_DONE
+-     notifyCallBack = function: 0xbb7bd040
+-     uiPos = {
+-      y = 184.64068603516
+-      x = 1103.59375
+-     }
+-     19 = you
+-    }
+12-26 11:54:35[DEBUG] record point 10160 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/core/view/guide/GuideFacade.lua"]: in function 'UserGuideClickPoint'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function 'pointClick'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function <[string "script/vega/core/view/guide/GuideLayerMediato..."]:0>
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function 'uiLogicNotify'
+	[string "script/vega/core/view/guide/GuideFacade.lua"]: in function 'refreshGuideLayerEvent'
+	[string "script/vega/core/view/guide/GuideFacade.lua"]: in function 'DispatchGuideEvent'
+	[string "script/vega/battle/ui/componment/operate/skil..."]: in function ''
+	[string "script/vega/battle/ui/button/BaseButton.lua"]: in function ''
+	[string "script/gamebase/init.lua"]: in function <[string "script/gamebase/init.lua"]:0>
+12-26 11:54:35[INFO] ClientGuildStep:10160
+12-26 11:54:35[DEBUG] record point 10160 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function '_notifyCall'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function 'pointClick'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function <[string "script/vega/core/view/guide/GuideLayerMediato..."]:0>
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function 'uiLogicNotify'
+	[string "script/vega/core/view/guide/GuideFacade.lua"]: in function 'refreshGuideLayerEvent'
+	[string "script/vega/core/view/guide/GuideFacade.lua"]: in function 'DispatchGuideEvent'
+	[string "script/vega/battle/ui/componment/operate/skil..."]: in function ''
+	[string "script/vega/battle/ui/button/BaseButton.lua"]: in function ''
+	[string "script/gamebase/init.lua"]: in function <[string "script/gamebase/init.lua"]:0>
+12-26 11:54:35[INFO] ClientGuildStep:10160
+12-26 11:54:35[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = huos01_juezhaoquyuguangxiaoshi
+-     }
+-    }
+12-26 11:54:35[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:54:35[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = baoji_shuzidiaoxuexin
+-     }
+-    }
+12-26 11:54:35[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:54:35[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = baoji_shuzidiaoxuexin
+-     }
+-    }
+12-26 11:54:35[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:54:35[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = zengzhangdianhong_nengliangtiaoshi
+-     }
+-    }
+12-26 11:54:35[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:54:37[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = gedang_shuzidiaoxuexin
+-     }
+-    }
+12-26 11:54:37[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:54:37[INFO] NewDojoDialogMediator:onRegister
+12-26 11:54:37[INFO] -    FUNC__DIALOG = NewDojoDialogMediator:enterWithData
+12-26 11:54:37[INFO] -    FUNC__DIALOG = showSingleDialog  BattleDesc_01_002_01
+12-26 11:54:37[INFO] -    FUNC__DIALOG = setTextFadeIn
+12-26 11:54:38[INFO] -    FUNC__DIALOG = setRichText
+12-26 11:54:38[INFO] -    FUNC__DIALOG = 肯·马斯特斯，在我看来你们的力量也不过如此。到此结束了！渣滓们。
+12-26 11:54:38[DEBUG] <ViewStatFacade>[upload] {"view":"NewDojoDialogMediator","DojoTalk":"BattleDesc_01_002_01"}
+12-26 11:54:38[DEBUG] record point 10170 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/dojo/view/dialog/NewDojoDialogMed..."]: in function 'setGoOnVisible'
+	[string "script/vega/dojo/view/dialog/NewDojoDialogMed..."]: in function '_callback'
+	[string "script/gamebase/schedule/LuaScheduler.lua"]: in function '_doCallback'
+	[string "script/gamebase/schedule/LuaScheduler.lua"]: in function 'tick'
+	[string "script/gamebase/schedule/LuaScheduler.lua"]: in function '_tick'
+	[string "script/gamebase/schedule/LuaScheduler.lua"]: in function <[string "script/gamebase/schedule/LuaScheduler.lua"]:0>
+12-26 11:54:38[INFO] ClientGuildStep:10170
+12-26 11:54:41[DEBUG] cancle ForbidClickstack traceback:
+	[string "script/gamebase/init.lua"]: in function 'gSetForbidClick'
+	[string "script/gamebase/init.lua"]: in function <[string "script/gamebase/init.lua"]:0>
+12-26 11:54:41[DEBUG] true
+12-26 11:54:41[DEBUG] finishDialogShow
+12-26 11:54:41[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = widegetTouch
+-     2 = {
+-     }
+-    }
+12-26 11:54:41[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:54:42[DEBUG] record point 10170 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/dojo/view/dialog/NewDojoDialogMed..."]: in function 'trackEndPoint'
+	[string "script/vega/dojo/view/dialog/NewDojoDialogMed..."]: in function <[string "script/vega/dojo/view/dialog/NewDojoDialogMed..."]:0>
+12-26 11:54:42[INFO] ClientGuildStep:10170
+12-26 11:54:42[INFO] -    FUNC__DIALOG = NewDojoDialogMediator:dispose
+12-26 11:54:42[DEBUG] -    绝招链统计数据 = {
+-     damage = 5720
+-     duration = 7333.348
+-     skillList = {
+-      1 = 50902
+-      2 = 40905
+-      3 = 50903
+-     }
+-    }
+12-26 11:54:42[DEBUG] <ViewStatFacade>[upload] {"battleSceneTag":"Intro02","view":"BattleEmptyMediator"}
+12-26 11:54:42[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = gedang_shuzidiaoxuexin
+-     }
+-    }
+12-26 11:54:42[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:54:42[DEBUG] record point 10180 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'runEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'checkAndRunEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/logic/framework/utils/Batt..."]: in function 'dispatchEvent'
+	[string "script/vega/battle/workflow/RenderCmdBus.lua"]: in function <[string "script/vega/battle/workflow/RenderCmdBus.lua"]:0>
+	[C]: in function ''
+	[string "script/vega/battle/workflow/RenderCmdBus.lua"]: in function 'sendRenderCmd'
+	[string "script/vega/battle/BattleContext.lua"]: in function 'tickRender'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function 'tick'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function <[string "script/vega/battle/driver/BattleBaseDriver.lua"]:0>
+	[C]: in function 'xpcall'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function <[string "script/vega/battle/driver/BattleBaseDriver.lua"]:0>
+12-26 11:54:42[INFO] ClientGuildStep:10180
+12-26 11:54:42[DEBUG] record ------------------------record_10180------------------------------------------------------------------------------------
+12-26 11:54:49[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = main02_aoyianniudh
+-     }
+-    }
+12-26 11:54:49[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:54:49[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = main02_aoyianniudh
+-     }
+-    }
+12-26 11:54:49[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:54:49[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = main02_aoyianniudh
+-     }
+-    }
+12-26 11:54:49[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:54:50[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = kBattleTrigger2
+-     2 = {
+-      1 = {
+-       globalPos = {
+-        1 = {
+-         y = 111.06659698486
+-         x = 158.44471740723
+-        }
+-       }
+-       id = battle_000105
+-       triggerType = 2
+-      }
+-     }
+-    }
+12-26 11:54:50[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:54:50[DEBUG] record point 10190 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function 'refreshGuideUI'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function 'enterWithData'
+	[string "script/vega/core/controller/guide/GuideComman..."]: in function 'execute'
+	[string "script/gamebase/legs/core/CommandMap.lua"]: in function 'execute'
+	[string "script/gamebase/legs/core/CommandMap.lua"]: in function '_commandExecutor'
+	[string "script/gamebase/legs/core/CommandMap.lua"]: in function <[string "script/gamebase/legs/core/CommandMap.lua"]:0>
+	[C]: in function 'dispatch'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function 'battleTrigger2'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function 'uiLogicNotify'
+	[string "script/vega/core/view/guide/GuideFacade.lua"]: in function 'refreshGuideLayerEvent'
+	...
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/logic/framework/utils/Batt..."]: in function 'dispatchEvent'
+	[string "script/vega/battle/workflow/RenderCmdBus.lua"]: in function <[string "script/vega/battle/workflow/RenderCmdBus.lua"]:0>
+	[C]: in function ''
+	[string "script/vega/battle/workflow/RenderCmdBus.lua"]: in function 'sendRenderCmd'
+	[string "script/vega/battle/BattleContext.lua"]: in function 'tickRender'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function 'tick'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function <[string "script/vega/battle/driver/BattleBaseDriver.lua"]:0>
+	[C]: in function 'xpcall'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function <[string "script/vega/battle/driver/BattleBaseDriver.lua"]:0>
+12-26 11:54:50[INFO] ClientGuildStep:10190
+12-26 11:54:50[DEBUG] <Guide>-    curr exec guide step = {
+-     1 = battle_000105
+-     2 = 10190
+-     3 = 10200
+-     4 = {
+-      1 = {
+-       y = 100
+-       x = 580
+-      }
+-     }
+-     5 = pic_tutorial_hero_yuriko
+-     6 = {
+-      1 = 敌人冲到前排了！使用<font color='#ff2500'>奥义技</font>反击！。
+-     }
+-     8 = {
+-      height = 100
+-      width = 100
+-     }
+-     9 = {
+-      1 = 40
+-     }
+-     14 = battlemediator
+-     19 = you
+-     23 = EVT_GUIDE_BATTLE_STEP_DONE
+-     notifyCallBack = function: 0xbb04b260
+-     uiPos = {
+-      y = 111.06659698486
+-      x = 158.44471740723
+-     }
+-    }
+12-26 11:54:52[DEBUG] cancle ForbidClickstack traceback:
+	[string "script/gamebase/init.lua"]: in function 'gSetForbidClick'
+	[string "script/gamebase/init.lua"]: in function <[string "script/gamebase/init.lua"]:0>
+12-26 11:54:52[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = widegetTouch
+-     2 = {
+-     }
+-    }
+12-26 11:54:52[DEBUG] <Guide>-    --->>currGuide: = {
+-     1 = battle_000105
+-     2 = 10190
+-     3 = 10200
+-     4 = {
+-      1 = {
+-       y = 100
+-       x = 580
+-      }
+-     }
+-     5 = pic_tutorial_hero_yuriko
+-     6 = {
+-      1 = 敌人冲到前排了！使用<font color='#ff2500'>奥义技</font>反击！。
+-     }
+-     8 = {
+-      height = 100
+-      width = 100
+-     }
+-     9 = {
+-      1 = 40
+-     }
+-     14 = battlemediator
+-     19 = you
+-     23 = EVT_GUIDE_BATTLE_STEP_DONE
+-     notifyCallBack = function: 0xbb04b260
+-     uiPos = {
+-      y = 111.06659698486
+-      x = 158.44471740723
+-     }
+-    }
+12-26 11:54:52[DEBUG] record point 10200 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/core/view/guide/GuideFacade.lua"]: in function 'UserGuideClickPoint'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function 'pointClick'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function <[string "script/vega/core/view/guide/GuideLayerMediato..."]:0>
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function 'uiLogicNotify'
+	[string "script/vega/core/view/guide/GuideFacade.lua"]: in function 'refreshGuideLayerEvent'
+	[string "script/vega/core/view/guide/GuideFacade.lua"]: in function 'DispatchGuideEvent'
+	[string "script/vega/battle/ui/componment/operate/skil..."]: in function ''
+	[string "script/vega/battle/ui/button/BaseButton.lua"]: in function ''
+	[string "script/gamebase/init.lua"]: in function <[string "script/gamebase/init.lua"]:0>
+12-26 11:54:52[INFO] ClientGuildStep:10200
+12-26 11:54:52[DEBUG] record point 10200 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function '_notifyCall'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function 'pointClick'
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function <[string "script/vega/core/view/guide/GuideLayerMediato..."]:0>
+	[string "script/vega/core/view/guide/GuideLayerMediato..."]: in function 'uiLogicNotify'
+	[string "script/vega/core/view/guide/GuideFacade.lua"]: in function 'refreshGuideLayerEvent'
+	[string "script/vega/core/view/guide/GuideFacade.lua"]: in function 'DispatchGuideEvent'
+	[string "script/vega/battle/ui/componment/operate/skil..."]: in function ''
+	[string "script/vega/battle/ui/button/BaseButton.lua"]: in function ''
+	[string "script/gamebase/init.lua"]: in function <[string "script/gamebase/init.lua"]:0>
+12-26 11:54:52[INFO] ClientGuildStep:10200
+12-26 11:54:52[DEBUG] record point 10210 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'runEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'checkAndRunEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/logic/framework/utils/Batt..."]: in function 'dispatchEvent'
+	[string "script/vega/battle/workflow/RenderCmdBus.lua"]: in function <[string "script/vega/battle/workflow/RenderCmdBus.lua"]:0>
+	[C]: in function ''
+	[string "script/vega/battle/workflow/RenderCmdBus.lua"]: in function 'sendRenderCmd'
+	[string "script/vega/battle/BattleContext.lua"]: in function 'tickRender'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function 'tick'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function <[string "script/vega/battle/driver/BattleBaseDriver.lua"]:0>
+	[C]: in function 'xpcall'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function <[string "script/vega/battle/driver/BattleBaseDriver.lua"]:0>
+12-26 11:54:52[INFO] ClientGuildStep:10210
+12-26 11:54:52[DEBUG] record ------------------------record_10210------------------------------------------------------------------------------------
+12-26 11:54:53[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = aoyi_zhandouanniudianji
+-     }
+-    }
+12-26 11:54:53[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:54:53[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = lengquedianhong_nengliangtiaoshi
+-     }
+-    }
+12-26 11:54:53[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:54:56[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = diaoxue_shuzidiaoxuexin
+-     }
+-    }
+12-26 11:54:56[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:55:01[INFO] NewDojoDialogMediator:onRegister
+12-26 11:55:01[INFO] -    FUNC__DIALOG = NewDojoDialogMediator:enterWithData
+12-26 11:55:01[INFO] -    FUNC__DIALOG = showSingleDialog  BattleDesc_01_003_01
+12-26 11:55:01[INFO] -    FUNC__DIALOG = setTextFadeIn
+12-26 11:55:01[INFO] -    FUNC__DIALOG = setRichText
+12-26 11:55:01[INFO] -    FUNC__DIALOG = 可恶，我的眼睛，竟然在这个时候……
+12-26 11:55:01[DEBUG] <ViewStatFacade>[upload] {"view":"NewDojoDialogMediator","DojoTalk":"BattleDesc_01_003_01"}
+12-26 11:55:01[DEBUG] record point 10220 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/dojo/view/dialog/NewDojoDialogMed..."]: in function 'setGoOnVisible'
+	[string "script/vega/dojo/view/dialog/NewDojoDialogMed..."]: in function '_callback'
+	[string "script/gamebase/schedule/LuaScheduler.lua"]: in function '_doCallback'
+	[string "script/gamebase/schedule/LuaScheduler.lua"]: in function 'tick'
+	[string "script/gamebase/schedule/LuaScheduler.lua"]: in function '_tick'
+	[string "script/gamebase/schedule/LuaScheduler.lua"]: in function <[string "script/gamebase/schedule/LuaScheduler.lua"]:0>
+12-26 11:55:01[INFO] ClientGuildStep:10220
+12-26 11:55:03[DEBUG] cancle ForbidClickstack traceback:
+	[string "script/gamebase/init.lua"]: in function 'gSetForbidClick'
+	[string "script/gamebase/init.lua"]: in function <[string "script/gamebase/init.lua"]:0>
+12-26 11:55:03[DEBUG] true
+12-26 11:55:03[DEBUG] finishDialogShow
+12-26 11:55:03[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = widegetTouch
+-     2 = {
+-     }
+-    }
+12-26 11:55:03[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:55:04[DEBUG] record point 10220 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/dojo/view/dialog/NewDojoDialogMed..."]: in function 'trackEndPoint'
+	[string "script/vega/dojo/view/dialog/NewDojoDialogMed..."]: in function <[string "script/vega/dojo/view/dialog/NewDojoDialogMed..."]:0>
+12-26 11:55:04[INFO] ClientGuildStep:10220
+12-26 11:55:04[INFO] -    FUNC__DIALOG = NewDojoDialogMediator:dispose
+12-26 11:55:04[DEBUG] record point 10230 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'runEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'checkAndRunEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'onEventOver'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'runEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'checkAndRunEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/logic/framework/utils/Batt..."]: in function 'dispatchEvent'
+	[string "script/vega/battle/ui/BattleLayerMediator.lua"]: in function '_callback'
+	[string "script/vega/dojo/view/dialog/NewDojoDialogMed..."]: in function <[string "script/vega/dojo/view/dialog/NewDojoDialogMed..."]:0>
+12-26 11:55:04[INFO] ClientGuildStep:10230
+12-26 11:55:04[DEBUG] record ------------------------record_10230------------------------------------------------------------------------------------
+12-26 11:55:04[DEBUG] <ViewStatFacade>[upload] {"battleSceneTag":"Intro02","view":"BattleEmptyMediator"}
+12-26 11:55:05[INFO] NewDojoDialogMediator:onRegister
+12-26 11:55:05[INFO] -    FUNC__DIALOG = NewDojoDialogMediator:enterWithData
+12-26 11:55:05[INFO] -    FUNC__DIALOG = showSingleDialog  BattleDesc_01_004_01
+12-26 11:55:05[INFO] -    FUNC__DIALOG = setTextFadeIn
+12-26 11:55:05[INFO] -    FUNC__DIALOG = setRichText
+12-26 11:55:05[INFO] -    FUNC__DIALOG = 别想走！
+12-26 11:55:05[DEBUG] record point 10240 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/dojo/view/dialog/NewDojoDialogMed..."]: in function 'setGoOnVisible'
+	[string "script/vega/dojo/view/dialog/NewDojoDialogMed..."]: in function '_callback'
+	[string "script/gamebase/schedule/LuaScheduler.lua"]: in function '_doCallback'
+	[string "script/gamebase/schedule/LuaScheduler.lua"]: in function 'tick'
+	[string "script/gamebase/schedule/LuaScheduler.lua"]: in function '_tick'
+	[string "script/gamebase/schedule/LuaScheduler.lua"]: in function <[string "script/gamebase/schedule/LuaScheduler.lua"]:0>
+12-26 11:55:05[INFO] ClientGuildStep:10240
+12-26 11:55:06[DEBUG] <ViewStatFacade>[upload] {"view":"NewDojoDialogMediator","DojoTalk":"BattleDesc_01_004_01"}
+12-26 11:55:06[DEBUG] cancle ForbidClickstack traceback:
+	[string "script/gamebase/init.lua"]: in function 'gSetForbidClick'
+	[string "script/gamebase/init.lua"]: in function <[string "script/gamebase/init.lua"]:0>
+12-26 11:55:06[DEBUG] true
+12-26 11:55:06[DEBUG] finishDialogShow
+12-26 11:55:06[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = widegetTouch
+-     2 = {
+-     }
+-    }
+12-26 11:55:06[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:55:07[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = main_duihuajuqing
+-     }
+-    }
+12-26 11:55:07[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:55:07[DEBUG] record point 10240 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/dojo/view/dialog/NewDojoDialogMed..."]: in function 'trackEndPoint'
+	[string "script/vega/dojo/view/dialog/NewDojoDialogMed..."]: in function <[string "script/vega/dojo/view/dialog/NewDojoDialogMed..."]:0>
+12-26 11:55:07[INFO] ClientGuildStep:10240
+12-26 11:55:07[INFO] -    FUNC__DIALOG = NewDojoDialogMediator:dispose
+12-26 11:55:07[DEBUG] record point 10250 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'runEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'checkAndRunEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'onEventOver'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'runEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'checkAndRunEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/logic/framework/utils/Batt..."]: in function 'dispatchEvent'
+	[string "script/vega/battle/ui/BattleLayerMediator.lua"]: in function '_callback'
+	[string "script/vega/dojo/view/dialog/NewDojoDialogMed..."]: in function <[string "script/vega/dojo/view/dialog/NewDojoDialogMed..."]:0>
+12-26 11:55:07[INFO] ClientGuildStep:10250
+12-26 11:55:07[DEBUG] record ------------------------record_10250------------------------------------------------------------------------------------
+12-26 11:55:07[DEBUG] -    绝招链统计数据 = {
+-     damage = 5457
+-     duration = 10200.0204
+-     skillList = {
+-      1 = 60905
+-     }
+-    }
+12-26 11:55:07[DEBUG] <ViewStatFacade>[upload] {"battleSceneTag":"Intro02","view":"BattleEmptyMediator"}
+12-26 11:55:07[DEBUG] -    绝招链统计数据 = {
+-     damage = 0
+-     duration = 533.33439999999
+-     skillList = {
+-      1 = 60901
+-     }
+-    }
+12-26 11:55:07[DEBUG] -    绝招链统计数据 = {
+-     damage = 0
+-     duration = 0
+-     skillList = {
+-      1 = 50901
+-     }
+-    }
+12-26 11:55:08[DEBUG] record point 10260 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'runEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'checkAndRunEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/logic/framework/utils/Batt..."]: in function 'dispatchEvent'
+	[string "script/vega/battle/workflow/RenderCmdBus.lua"]: in function <[string "script/vega/battle/workflow/RenderCmdBus.lua"]:0>
+	[C]: in function ''
+	[string "script/vega/battle/workflow/RenderCmdBus.lua"]: in function 'sendRenderCmd'
+	[string "script/vega/battle/BattleContext.lua"]: in function 'tickRender'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function 'tick'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function <[string "script/vega/battle/driver/BattleBaseDriver.lua"]:0>
+	[C]: in function 'xpcall'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function <[string "script/vega/battle/driver/BattleBaseDriver.lua"]:0>
+12-26 11:55:08[INFO] ClientGuildStep:10260
+12-26 11:55:08[DEBUG] record ------------------------record_10260------------------------------------------------------------------------------------
+12-26 11:55:09[DEBUG] -    ----开始执行命令---- = {
+-     1 = s02_0_0
+-     3 = init
+-     4 = {
+-      path = map_mapxunlianchang
+-      isInheritBackGround = true
+-      isSwhichBattleField = false
+-      isShrinkUI = true
+-     }
+-     pos = {
+-      1 = {
+-       y = 0
+-       x = 0
+-      }
+-     }
+-    }
+12-26 11:55:09[DEBUG] -    ----开始执行命令---- = {
+-     1 = s02_0_1
+-     3 = makeRecord
+-     4 = {
+-      record = 10270
+-     }
+-     pos = {
+-      1 = {
+-       y = 0
+-       x = 0
+-      }
+-     }
+-    }
+12-26 11:55:09[DEBUG] record point 10270 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/battle/view/drama/orders/makeReco..."]: in function 'runOrder'
+	[string "script/vega/battle/view/drama/DramaDriver.lua"]: in function '__runDrama'
+	[string "script/vega/battle/view/drama/DramaDriver.lua"]: in function <[string "script/vega/battle/view/drama/DramaDriver.lua"]:0>
+	[string "script/vega/battle/logic/framework/utils/Batt..."]: in function 'dispatchEvent'
+	[string "script/vega/battle/view/drama/DramaDriver.lua"]: in function '__runDrama'
+	[string "script/vega/battle/view/drama/DramaDriver.lua"]: in function 'dramaStart'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'runEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'checkAndRunEvent'
+	...
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/logic/framework/utils/Batt..."]: in function 'dispatchEvent'
+	[string "script/vega/battle/workflow/RenderCmdBus.lua"]: in function <[string "script/vega/battle/workflow/RenderCmdBus.lua"]:0>
+	[C]: in function ''
+	[string "script/vega/battle/workflow/RenderCmdBus.lua"]: in function 'sendRenderCmd'
+	[string "script/vega/battle/BattleContext.lua"]: in function 'tickRender'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function 'tick'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function <[string "script/vega/battle/driver/BattleBaseDriver.lua"]:0>
+	[C]: in function 'xpcall'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function <[string "script/vega/battle/driver/BattleBaseDriver.lua"]:0>
+12-26 11:55:09[INFO] ClientGuildStep:10270
+12-26 11:55:09[DEBUG] -    ----开始执行命令---- = {
+-     1 = s02_0_2
+-     2 = ci
+-     3 = ColorIn
+-     4 = {
+-      acc = 3
+-      time = 500
+-      color = {
+-       r = 255
+-       b = 255
+-       g = 255
+-      }
+-     }
+-     pos = {
+-      1 = {
+-       y = 0
+-       x = 0
+-      }
+-     }
+-    }
+12-26 11:55:09[DEBUG] -    ----开始执行命令---- = {
+-     1 = s02_0_3
+-     3 = wait
+-     pos = {
+-      1 = {
+-       y = 0
+-       x = 0
+-      }
+-     }
+-     13 = 500
+-    }
+12-26 11:55:09[DEBUG] -    ----开始执行命令---- = {
+-     1 = s02_0_4
+-     3 = makeRecord
+-     4 = {
+-      record = 10280
+-     }
+-     pos = {
+-      1 = {
+-       y = 0
+-       x = 0
+-      }
+-     }
+-    }
+12-26 11:55:09[DEBUG] record point 10280 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/battle/view/drama/orders/makeReco..."]: in function 'runOrder'
+	[string "script/vega/battle/view/drama/DramaDriver.lua"]: in function '__runDrama'
+	[string "script/vega/battle/view/drama/DramaDriver.lua"]: in function <[string "script/vega/battle/view/drama/DramaDriver.lua"]:0>
+	[string "script/vega/battle/logic/framework/utils/Batt..."]: in function 'dispatchEvent'
+	[string "script/vega/battle/view/drama/orders/wait.lua"]: in function ''
+	[string "script/vega/battle/render/schedule/part/Sched..."]: in function '_callback'
+	[string "script/gamebase/schedule/LuaScheduler.lua"]: in function '_doCallback'
+	[string "script/gamebase/schedule/LuaScheduler.lua"]: in function 'tick'
+	[string "script/vega/battle/render/schedule/part/Sched..."]: in function '_tick'
+	[string "script/vega/battle/render/schedule/part/Sched..."]: in function 'update'
+	[string "script/vega/battle/render/schedule/ScheduleDr..."]: in function 'update'
+	[string "script/vega/battle/render/BattleRender.lua"]: in function 'driverUpdate'
+	[string "script/vega/battle/BattleContext.lua"]: in function 'tickRender'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function 'tick'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function <[string "script/vega/battle/driver/BattleBaseDriver.lua"]:0>
+	[C]: in function 'xpcall'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function <[string "script/vega/battle/driver/BattleBaseDriver.lua"]:0>
+12-26 11:55:09[INFO] ClientGuildStep:10280
+12-26 11:55:09[DEBUG] -    ----开始执行命令---- = {
+-     1 = s02_0_5
+-     2 = fvideo
+-     3 = addVideo
+-     4 = {
+-      path = media/video/campaign_shenka.mp4
+-      isTopShow = true
+-      autoDelete = false
+-      adjust = fullScreen
+-     }
+-     pos = {
+-      1 = {
+-       y = 0
+-       x = 0
+-      }
+-     }
+-    }
+12-26 11:55:09[DEBUG] -    ----开始执行命令---- = {
+-     1 = s02_0_6
+-     3 = wait
+-     pos = {
+-      1 = {
+-       y = 0
+-       x = 0
+-      }
+-     }
+-     13 = 1500
+-    }
+12-26 11:55:10[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = main_chuanchengjihanzhao
+-     }
+-    }
+12-26 11:55:10[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:55:10[DEBUG] <Guide>-    ------DispatchGuideEvent->>>>>> = {
+-     1 = animdone
+-     2 = {
+-      1 = main_chuanchengjihanzhao
+-     }
+-    }
+12-26 11:55:10[DEBUG] <Guide>-    --->>currGuide: = nil
+12-26 11:55:11[DEBUG] -    ----开始执行命令---- = {
+-     1 = s02_0_7
+-     2 = ci
+-     3 = del
+-     pos = {
+-      1 = {
+-       y = 0
+-       x = 0
+-      }
+-     }
+-    }
+12-26 11:55:11[DEBUG] -    ----开始执行命令---- = {
+-     1 = s02_0_8
+-     3 = wait
+-     pos = {
+-      1 = {
+-       y = 0
+-       x = 0
+-      }
+-     }
+-     13 = 4400
+-    }
+12-26 11:55:15[DEBUG] -    ----开始执行命令---- = {
+-     1 = s02_0_9
+-     2 = co
+-     3 = ColorOut
+-     4 = {
+-      acc = 3
+-      time = 1500
+-      color = {
+-       r = 255
+-       b = 255
+-       g = 255
+-      }
+-     }
+-     pos = {
+-      1 = {
+-       y = 0
+-       x = 0
+-      }
+-     }
+-    }
+12-26 11:55:15[DEBUG] -    ----开始执行命令---- = {
+-     1 = s02_0_10
+-     2 = fvideo
+-     3 = del
+-     pos = {
+-      1 = {
+-       y = 0
+-       x = 0
+-      }
+-     }
+-    }
+12-26 11:55:15[DEBUG] -    ----开始执行命令---- = {
+-     1 = s02_0_11
+-     3 = makeRecord
+-     4 = {
+-      record = 10290
+-     }
+-     pos = {
+-      1 = {
+-       y = 0
+-       x = 0
+-      }
+-     }
+-    }
+12-26 11:55:15[DEBUG] record point 10290 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/battle/view/drama/orders/makeReco..."]: in function 'runOrder'
+	[string "script/vega/battle/view/drama/DramaDriver.lua"]: in function '__runDrama'
+	[string "script/vega/battle/view/drama/DramaDriver.lua"]: in function <[string "script/vega/battle/view/drama/DramaDriver.lua"]:0>
+	[string "script/vega/battle/logic/framework/utils/Batt..."]: in function 'dispatchEvent'
+	[string "script/vega/battle/view/drama/DramaDriver.lua"]: in function '__runDrama'
+	[string "script/vega/battle/view/drama/DramaDriver.lua"]: in function <[string "script/vega/battle/view/drama/DramaDriver.lua"]:0>
+	[string "script/vega/battle/logic/framework/utils/Batt..."]: in function 'dispatchEvent'
+	[string "script/vega/battle/view/drama/DramaDriver.lua"]: in function '__runDrama'
+	[string "script/vega/battle/view/drama/DramaDriver.lua"]: in function <[string "script/vega/battle/view/drama/DramaDriver.lua"]:0>
+	[string "script/vega/battle/logic/framework/utils/Batt..."]: in function 'dispatchEvent'
+	...
+	[string "script/gamebase/schedule/LuaScheduler.lua"]: in function 'tick'
+	[string "script/vega/battle/render/schedule/part/Sched..."]: in function '_tick'
+	[string "script/vega/battle/render/schedule/part/Sched..."]: in function 'update'
+	[string "script/vega/battle/render/schedule/ScheduleDr..."]: in function 'update'
+	[string "script/vega/battle/render/BattleRender.lua"]: in function 'driverUpdate'
+	[string "script/vega/battle/BattleContext.lua"]: in function 'tickRender'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function 'tick'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function <[string "script/vega/battle/driver/BattleBaseDriver.lua"]:0>
+	[C]: in function 'xpcall'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function <[string "script/vega/battle/driver/BattleBaseDriver.lua"]:0>
+12-26 11:55:15[INFO] ClientGuildStep:10290
+12-26 11:55:15[DEBUG] -    ----开始执行命令---- = {
+-     1 = s02_0_12
+-     3 = over
+-     4 = {
+-      destroy = false
+-     }
+-     pos = {
+-      1 = {
+-       y = 0
+-       x = 0
+-      }
+-     }
+-     13 = 0
+-    }
+12-26 11:55:18[DEBUG] record point 10300 stack traceback:
+	[string "script/vega/utils/EventRecorder.lua"]: in function 'trackAction'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'runEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'checkAndRunEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'onEventOver'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'runEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function 'checkAndRunEvent'
+	[string "script/vega/battle/view/event/BattleViewGloba..."]: in function <[string "script/vega/battle/view/event/BattleViewGloba..."]:0>
+	[string "script/vega/battle/logic/framework/utils/Batt..."]: in function 'dispatchEvent'
+	[string "script/vega/battle/workflow/RenderCmdBus.lua"]: in function <[string "script/vega/battle/workflow/RenderCmdBus.lua"]:0>
+	[C]: in function ''
+	[string "script/vega/battle/workflow/RenderCmdBus.lua"]: in function 'sendRenderCmd'
+	[string "script/vega/battle/BattleContext.lua"]: in function 'tickRender'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function 'tick'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function <[string "script/vega/battle/driver/BattleBaseDriver.lua"]:0>
+	[C]: in function 'xpcall'
+	[string "script/vega/battle/driver/BattleBaseDriver.lua"]: in function <[string "script/vega/battle/driver/BattleBaseDriver.lua"]:0>
+12-26 11:55:18[INFO] ClientGuildStep:10300
+12-26 11:55:18[INFO] appDidEnterBackground

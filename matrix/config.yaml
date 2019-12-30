@@ -20,7 +20,7 @@ vega_config:
     project_res: /data/work/src/VegaGame/svn/frontend/Assets
     project_cfg: /data/work/src/VegaGame/svn/frontend/config
     res_path: /data/work/src/VegaGame/Resources
-    mtool_path: /data/work/src/mtool_py3
+    mtool_path: /data/work/src/mtool
 
 TexturePackerProcessNumber: 8
 TexturePacker: "/usr/local/bin/TexturePacker"

@@ -16,6 +16,7 @@ logger = common_utils.getLogger()
 @click.option('-l/-nl', '--lua', default = False, help=u'lua 代码')
 @click.option('-r/-nr', '--res', default = False, help=u'美术资源')
 @click.option('-f/-nf', '--config', default = False, help=u'配置文件')
+@click.option('-r/-nr', '--release', default = False, help=u'release目录')
 def update_vega_res(**options):
     '''vega 代码、资源、配置更新'''
     show_all = not (options['cpp'] or options['lua'] or options['res'] or options['config'])
@@ -27,8 +28,13 @@ def update_vega_res(**options):
         sh.cd(project_setting['mtool_path'] or '/data/work/src/dzm2/mtool')
         mtool = sh.Command('env/bin/mtl')
         mtool('luaalt', _out=sys.stdout, _err=sys.stdout)
+
+    release_fix = ''
+    if options['release'] :
+        release_fix = '_release'
+        
     if options['res'] or show_all:
-        has_update = svnutil.update(project_setting['project_res'])
+        has_update = svnutil.update(project_setting['project_res'] + release_fix)
         if has_update:
             sh.cd(project_setting['mtool_path'] or '/data/work/src/dzm2/mtool')
             mtool = sh.Command('env/bin/mtl')
@@ -36,7 +42,7 @@ def update_vega_res(**options):
             mtool('res', _out=sys.stdout, _err=sys.stdout)
 
     if options['config'] or show_all:
-        has_update = svnutil.update(project_setting['project_cfg'])
+        has_update = svnutil.update(project_setting['project_cfg'] + release_fix)
         if has_update:
             sh.cd(project_setting['mtool_path'] or '/data/work/src/dzm2/mtool')
             mtool = sh.Command('env/bin/mtl')
