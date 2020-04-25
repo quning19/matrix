@@ -43,8 +43,8 @@ def getMainConfig(key = None):
         if not os.path.exists(config_path):
             logger.error("config.yaml 文件不存在，需要将 config.example.yaml 复制为 config.yaml 并进行配置")
             exit()
-        stream = file(config_path, 'r')
-        main_config = yaml.load(stream)
+        stream = open(config_path, 'r')
+        main_config = yaml.load(stream, Loader=yaml.FullLoader)
     if key != None:
         if main_config.has_key(key):
             return main_config[key]
@@ -63,7 +63,7 @@ def getProjectConfig(key):
         self_dir = os.path.dirname(os.path.abspath(__file__))
         config_path = os.path.join(self_dir, 'config.personal.yaml')
         if os.path.exists(config_path):
-            stream = file(config_path, 'r')
+            stream = open(config_path, 'r')
             personal_config = yaml.load(stream)
         if personal_config == None:
             personal_config = {}
@@ -75,7 +75,7 @@ def getProjectConfig(key):
         if not os.path.exists(config_path):
             logger.error("config.yaml 文件不存在，需要将 config.example.yaml 复制为 config.yaml 并进行配置")
             exit()
-        stream = file(config_path, 'r')
+        stream = open(config_path, 'r')
         project_config = yaml.load(stream)
         if project_config == None:
             project_config = {}
@@ -108,7 +108,7 @@ def getSetting(key):
     setting_path = os.path.join(self_dir, 'setting.yaml')
     if not os.path.exists(setting_path):
         return None
-    stream = file(setting_path, 'r')
+    stream = open(setting_path, 'r')
     setting = yaml.load(stream)
     stream.close()
     if setting.has_key(key):
@@ -118,7 +118,7 @@ def getSetting(key):
 def setSetting(key, value):
     self_dir = os.path.dirname(os.path.abspath(__file__))
     setting_path = os.path.join(self_dir, 'setting.yaml')
-    stream = file(setting_path, 'w+')
+    stream = open(setting_path, 'w+')
     setting = yaml.load(stream) or {}
     setting[key] = value
     yaml.dump(setting, stream)

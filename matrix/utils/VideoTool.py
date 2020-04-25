@@ -35,6 +35,7 @@ def cutVideo(**options):
         logger.info(u'视频速度放慢[%.2f]倍'%slowRate)
 
     args.append(outputPath)
+    logger.info(args)
     logger.info('开始处理')
     ffmpeg(*args)
     logger.info('输出文件: ' + outputPath)

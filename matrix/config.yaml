@@ -14,13 +14,13 @@ master_config:
 
 vega_config:
     project_name: vega
-    root_path: /data/work/src/VegaGame
-    project_c: /data/work/src/VegaGame/vegaC
-    project_lua: /data/work/src/VegaGame/vega_lua
-    project_res: /data/work/src/VegaGame/svn/frontend/Assets
-    project_cfg: /data/work/src/VegaGame/svn/frontend/config
-    res_path: /data/work/src/VegaGame/Resources
-    mtool_path: /data/work/src/mtool
+    root_path: /Users/quning/work/VegaGame
+    project_c: /Users/quning/work/VegaGame/vegaC
+    project_lua: /Users/quning/work/VegaGame/vega_lua
+    project_res: /Users/quning/work/VegaGame/svn/frontend/Assets_link
+    project_cfg: /Users/quning/work/VegaGame/svn/frontend/config_link
+    res_path: /Users/quning/work/VegaGame/Resources
+    mtool_path: /Users/quning/work/mtool
 
 TexturePackerProcessNumber: 8
 TexturePacker: "/usr/local/bin/TexturePacker"

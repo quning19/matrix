@@ -9,6 +9,8 @@ from matrix.utils import common_utils
 from matrix.utils import svnutil
 from matrix.utils import gitutil
 
+mtl_cmd = 'mtl'
+
 logger = common_utils.getLogger()
 
 @click.command()
@@ -26,7 +28,7 @@ def update_vega_res(**options):
     if options['lua'] or show_all:
         gitutil.git_update(project_setting['project_lua'])
         sh.cd(project_setting['mtool_path'] or '/data/work/src/dzm2/mtool')
-        mtool = sh.Command('env/bin/mtl')
+        mtool = sh.Command(mtl_cmd)
         mtool('luaalt', _out=sys.stdout, _err=sys.stdout)
 
     release_fix = ''
@@ -34,18 +36,20 @@ def update_vega_res(**options):
         release_fix = '_release'
         
     if options['res'] or show_all:
-        has_update = svnutil.update(project_setting['project_res'] + release_fix)
+        res_path = os.path.realpath(project_setting['project_res'] + release_fix)
+        has_update = svnutil.update(res_path)
         if has_update:
             sh.cd(project_setting['mtool_path'] or '/data/work/src/dzm2/mtool')
-            mtool = sh.Command('env/bin/mtl')
+            mtool = sh.Command(mtl_cmd)
             mtool('ui', '-np', _out=sys.stdout, _err=sys.stdout)
             mtool('res', _out=sys.stdout, _err=sys.stdout)
 
     if options['config'] or show_all:
-        has_update = svnutil.update(project_setting['project_cfg'] + release_fix)
+        cfg_path = os.path.realpath(project_setting['project_cfg'] + release_fix)
+        has_update = svnutil.update(cfg_path)
         if has_update:
             sh.cd(project_setting['mtool_path'] or '/data/work/src/dzm2/mtool')
-            mtool = sh.Command('env/bin/mtl')
+            mtool = sh.Command(mtl_cmd)
             mtool('cfg', _out=sys.stdout, _err=sys.stdout)
 
 @click.command()
@@ -100,7 +104,7 @@ def rebuild_platform_asset(**options):
 
     project_setting = common_utils.getMainConfig('vega_config')
     sh.cd(project_setting['mtool_path'] or '/data/work/src/dzm2/mtool')
-    mtool = sh.Command('env/bin/mtl')
+    mtool = sh.Command(mtl_cmd)
 
     project_setting = common_utils.getMainConfig('vega_config')
 

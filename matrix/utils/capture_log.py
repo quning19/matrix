@@ -21,7 +21,7 @@ firstSeperatorIndex = url.find('/', url.find('//') + len('//'))
 if firstSeperatorIndex < 0:
 	rootUrl = url + '/'
 else:
-	rootUrl = url[0:firstSeperatorIndex]
+	rootUrl = url
 
 wb_data = requests.get(url)
 
@@ -40,6 +40,7 @@ for x in logs:
 			wd = requests.get(fileUrl)
 			# out = open(x,"w")
 			out = codecs.open(os.path.join(curDir,x.get_text()), "w", wd.encoding)
+			print(os.path.join(curDir,x.get_text()))
 			out.write(wd.text)
 			out.close()
 		except Exception as e:
