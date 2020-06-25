@@ -90,6 +90,7 @@ def switch_resources(**options):
     if os.path.exists(dst_path):
         sh.rm(dst_path)
     ln = sh.Command('ln')
+    logger.debug('ln -s %s %s'%(src_path, dst_path))
     ln('-s',src_path, dst_path, _out=sys.stdout, _err=sys.stdout)
 
     logger.info('switch to ' + os.path.split(src_path)[-1])

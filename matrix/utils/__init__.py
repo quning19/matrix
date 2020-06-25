@@ -31,3 +31,14 @@ def md5_for_file(filename):
     return md5sum
 
 
+def get_all_file_list(find_dir, all_file_name, ext=None):
+    file_list = os.listdir(find_dir)
+    for file_name in file_list:
+        file_path = os.path.join(find_dir, file_name)
+        if os.path.isdir(file_path):
+            get_all_file_list(file_path, all_file_name, ext)
+        elif os.path.isfile(file_path):
+            if ext == None or ext in os.path.splitext(file_path)[1]:
+                all_file_name.append(file_path)
+
+

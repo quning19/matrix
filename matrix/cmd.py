@@ -33,8 +33,7 @@ main.add_command(server_log_analyse.run,name='server_log')
 
 from matrix.utils import VideoTool
 main.add_command(VideoTool.cutVideo,name='video')
-
-
+main.add_command(VideoTool.ExportVideo, name='ev')
 
 from matrix.tools import DownloadFiles
 main.add_command(DownloadFiles.download,name='download')
