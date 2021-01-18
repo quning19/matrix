@@ -13,6 +13,7 @@ ffmpegPath = 'ffmpeg'
 @click.option('-i', '--input', required = True, help=u'video文件路径')
 @click.option('-t', '--time', default = '', help=u'截取时间')
 @click.option('-s', '--slow', default = '1', help=u'慢动作')
+@click.option('-q', '--quality', help=u'慢动作')
 def cutVideo(**options):
     inputPath = options['input']
     pathes = os.path.splitext(inputPath)
@@ -29,6 +30,8 @@ def cutVideo(**options):
         logger.info(u'截取第[%d]秒到第[%d]秒.'%(startT, endT))
 
     args = args + ['-y', '-i', inputPath]
+    if options['slow'] != None:
+        args = args + ['-c:v', 'libx264', '-crf', options['slow']]
         # /data/work/src/tools/ffmpeg -ss 10 -t 3 -i /data/work/src/VegaGame/workspace/temp/oppo截图/Record_2019-12-30-14-20-52_67e27fddcffeff615c8f2a3c728537d0.mp4  -vf "setpts=(PTS-STARTPTS)/0.2" /data/work/src/VegaGame/workspace/temp/oppo截图/tes111t.mp4
     if options['slow'] != '1':
         slowRate = float(options['slow'])

@@ -38,6 +38,9 @@ main.add_command(VideoTool.ExportVideo, name='ev')
 from matrix.tools import DownloadFiles
 main.add_command(DownloadFiles.download,name='download')
 
+from matrix.tools import RenameAssetsForApk
+main.add_command(RenameAssetsForApk.zip_all_files, name='zipall')
+
 
 if __name__ == '__main__':
     main()
