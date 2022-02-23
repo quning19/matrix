@@ -52,6 +52,46 @@ def update_vega_res(**options):
             mtool = sh.Command(mtl_cmd)
             mtool('cfg', _out=sys.stdout, _err=sys.stdout)
 
+
+@click.command()
+@click.option('-c/-nc', '--cpp', default=False, help=u'C 代码库')
+@click.option('-l/-nl', '--lua', default=False, help=u'lua 代码')
+@click.option('-r/-nr', '--res', default=False, help=u'美术资源')
+@click.option('-f/-nf', '--config', default=False, help=u'配置文件')
+@click.option('-r/-nr', '--release', default=False, help=u'release目录')
+def update_gouki_res(**options):
+    '''vega 代码、资源、配置更新'''
+    show_all = not (options['cpp'] or options['lua'] or options['res'] or options['config'])
+    project_setting = common_utils.getMainConfig('gouki_config')
+    if options['cpp'] or show_all:
+        gitutil.git_update(project_setting['project_c'])
+    if options['lua'] or show_all:
+        gitutil.git_update(project_setting['project_lua'])
+        sh.cd(project_setting['mtool_path'] or '/data/work/src/dzm2/mtool')
+        mtool = sh.Command(mtl_cmd)
+        mtool('luaalt', _out=sys.stdout, _err=sys.stdout)
+
+    release_fix = ''
+    if options['release']:
+        release_fix = '_release'
+
+    if options['res'] or show_all:
+        res_path = os.path.realpath(project_setting['project_res'] + release_fix)
+        has_update = svnutil.update(res_path)
+        if has_update:
+            sh.cd(project_setting['mtool_path'] or '/data/work/src/dzm2/mtool')
+            mtool = sh.Command(mtl_cmd)
+            mtool('ui', '-np', _out=sys.stdout, _err=sys.stdout)
+            mtool('res', _out=sys.stdout, _err=sys.stdout)
+
+    if options['config'] or show_all:
+        cfg_path = os.path.realpath(project_setting['project_cfg'] + release_fix)
+        has_update = svnutil.update(cfg_path)
+        if has_update:
+            sh.cd(project_setting['mtool_path'] or '/data/work/src/dzm2/mtool')
+            mtool = sh.Command(mtl_cmd)
+            mtool('cfg', _out=sys.stdout, _err=sys.stdout)
+
 @click.command()
 @click.option('-n/-nc', '--normal', default = False, help=u'png资源')
 @click.option('-i/-ni', '--ios', default = False, help=u'pvr tp 资源')

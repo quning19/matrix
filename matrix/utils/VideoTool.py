@@ -57,11 +57,14 @@ def ExportVideo(**options):
         outputPath = os.path.abspath(inputPath) + '_export'
 
     all_file_list = []
-
+    logger = common_utils.getLogger()
     get_all_file_list(inputPath, all_file_list)
 
     for i in range(len(all_file_list)):
         filePath = all_file_list[i]
+        extName = os.path.splitext(filePath)[1]
+        if extName not in ['.mp4', '.mov']:
+            continue
         relpath = os.path.relpath(filePath, inputPath)
         outputFilePath = os.path.join(outputPath, relpath)
         outputFilePath = os.path.splitext(outputFilePath)[0] + '.mp4'

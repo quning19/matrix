@@ -22,6 +22,18 @@ vega_config:
     res_path: /Users/quning/work/VegaGame/Resources
     mtool_path: /Users/quning/work/mtool
 
+
+gouki_config:
+    project_name: vega
+    root_path: /Users/quning/work/GoukiGame
+    project_c: /Users/quning/work/GoukiGame/GoukiC
+    project_lua: /Users/quning/work/GoukiGame/GoukiLua
+    project_res: /Users/quning/work/GoukiGame/svn/frontend/Assets_link
+    project_cfg: /Users/quning/work/GoukiGame/svn/frontend/config_link
+    res_path: /Users/quning/work/GoukiGame/Resources
+    mtool_path: /Users/quning/work/mtool
+
+
 TexturePackerProcessNumber: 8
 TexturePacker: "/usr/local/bin/TexturePacker"
 

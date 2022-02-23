@@ -23,6 +23,7 @@ def main(**options):
 
 from matrix.update import vega
 main.add_command(vega.update_vega_res,name='up')
+main.add_command(vega.update_gouki_res, name='gouki')
 main.add_command(vega.switch_upgrade_path,name='sw')
 main.add_command(vega.switch_resources,name='sr')
 main.add_command(vega.rebuild_platform_asset,name='rb')
