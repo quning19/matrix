@@ -25,13 +25,24 @@ vega_config:
 
 gouki_config:
     project_name: vega
-    root_path: /Users/quning/work/GoukiGame
-    project_c: /Users/quning/work/GoukiGame/GoukiC
-    project_lua: /Users/quning/work/GoukiGame/GoukiLua
-    project_res: /Users/quning/work/GoukiGame/svn/frontend/Assets_link
-    project_cfg: /Users/quning/work/GoukiGame/svn/frontend/config_link
-    res_path: /Users/quning/work/GoukiGame/Resources
+    root_path: /Users/quning/work/PandoraGame
+    project_c: /Users/quning/work/PandoraGame/GoukiC
+    project_lua: /Users/quning/work/PandoraGame/GoukiLua
+    project_res: /Users/quning/work/PandoraGame/svn/frontend/Assets_link
+    project_cfg: /Users/quning/work/PandoraGame/svn/frontend/config_link
+    res_path: /Users/quning/work/PandoraGame/Resources
     mtool_path: /Users/quning/work/mtool
+
+pandora_config:
+    project_name: pandora
+    root_path: /Users/quning/work/PandoraGame
+    project_c: /Users/quning/work/PandoraGame/PandoraC
+    project_lua: /Users/quning/work/PandoraGame/PandoraLua
+    project_res: /Users/quning/work/PandoraGame/svn/frontend/Assets_link
+    project_cfg: /Users/quning/work/PandoraGame/config
+    project_pb: /Users/quning/work/PandoraGame/protocol
+    res_path: /Users/quning/work/PandoraGame/PandoraC/Resources
+    mtool_path: /Users/quning/work/PandoraGame/mtool/env/bin/mtl
 
 
 TexturePackerProcessNumber: 8

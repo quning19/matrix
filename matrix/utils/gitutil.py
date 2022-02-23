@@ -27,12 +27,23 @@ def git_export(src_path, tag, dest_path):
 
 def git_update(path):
     sh.cd(path)
+ 
+    def set_origin_head(line):
+        global origin_head
+        origin_head = line.strip()
+
+    sh.git('rev-parse', '--short', 'HEAD', _out = set_origin_head, _err=sys.stdout)
+
     logger.info('git pull [{path}]'.format(path=path))
     ret = sh.git('pull', _out=sys.stdout, _err=sys.stdout)
-    # print '==='
-    # print ret
-    # print '==='
-    # print 'Already up-to-date' in ret
+
+    def set_current_head(line):
+        global current_head
+        current_head = line.strip()
+
+    sh.git('rev-parse', '--short', 'HEAD', _out = set_current_head, _err=sys.stdout)
+
+    return origin_head != current_head
 
 def git_get_tags(src_path):
     git = sh.Command('/usr/bin/git')
