@@ -1,5 +1,5 @@
 import sh
-import common_utils
+from matrix.utils import common_utils
 import tempfile
 import xml.etree.ElementTree as ET
 import os

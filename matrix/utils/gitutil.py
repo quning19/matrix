@@ -2,7 +2,7 @@ import os
 import shutil
 import tempfile
 import sh
-import common_utils
+from matrix.utils import common_utils
 import sys
 
 logger = common_utils.getLogger()

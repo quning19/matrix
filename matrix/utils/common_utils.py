@@ -4,8 +4,8 @@ import yaml
 import os
 import logging
 import sys
-reload(sys)
-sys.setdefaultencoding('utf8')
+# reload(sys)
+# sys.setdefaultencoding('utf8')
 
 def getLogger(name = None):
     name = None or 'log'
@@ -44,9 +44,9 @@ def getMainConfig(key = None):
             logger.error("config.yaml 文件不存在，需要将 config.example.yaml 复制为 config.yaml 并进行配置")
             exit()
         stream = open(config_path, 'r')
-        main_config = yaml.load(stream, Loader=yaml.FullLoader)
+        main_config = yaml.load(stream, Loader=yaml.Loader)
     if key != None:
-        if main_config.has_key(key):
+        if key in main_config:
             return main_config[key]
         else:
             return None
@@ -80,9 +80,9 @@ def getProjectConfig(key):
         if project_config == None:
             project_config = {}
     if key != None:
-        if personal_config.has_key(key):
+        if key in personal_config:
             return personal_config[key]
-        elif project_config.has_key(key):
+        elif key in project_config:
             return project_config[key]
         else:
             return None
@@ -111,7 +111,7 @@ def getSetting(key):
     stream = open(setting_path, 'r')
     setting = yaml.load(stream)
     stream.close()
-    if setting.has_key(key):
+    if key in setting:
         return setting[key]
     return None
 

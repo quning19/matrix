@@ -46,8 +46,8 @@ def create_ln(source):
     project_setting = common_utils.getMainConfig('master_config')
     src_path = os.path.join(project_setting['root_path'], source)
     dst_path = os.path.join(project_setting['res_path'], 'asset')
-    print src_path
-    print dst_path
+    print(src_path)
+    print(dst_path)
     if os.path.exists(dst_path):
         # pylint: disable=no-member
         sh.rm(dst_path)

@@ -31,6 +31,10 @@ main.add_command(vega.rebuild_platform_asset,name='rb')
 from matrix.update import pandora
 main.add_command(pandora.update_pandora_res, name='pdr')
 
+from matrix.update import goblin
+main.add_command(goblin.update_goblin_res, name='goblin')
+
+
 from matrix.vega_pvp import server_log_analyse
 main.add_command(server_log_analyse.run,name='server_log')
 

@@ -17,8 +17,8 @@ excel_file = None
 @click.option('-o', '--output', required = True, help=u'excel文件路径')
 def run(**options):
     '''导出配置资源, 需要配置路径'''
-    print options['input']
-    print options['output']
+    print(options['input'])
+    print(options['output'])
     global delay_info, confirm_info, excel_file
     excel_file = openpyxl.load_workbook(filename = options['output'], read_only=False, data_only=False)
     read_all_confirm_info(options['input'])
@@ -149,7 +149,7 @@ def count_frames():
 def check_delay_confirmed():
     global delay_info, confirm_info
     for key in delay_info:
-        delay_info[key]['confirmed'] = confirm_info.has_key(key)
+        delay_info[key]['confirmed'] = key in confirm_info
         # if not delay_info[key]['confirmed']:
         #     print delay_info[key]
 
