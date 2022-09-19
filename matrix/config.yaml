@@ -36,11 +36,12 @@ gouki_config:
 goblin_config:
     project_name: goblin
     root_path: /Users/quning/work/GoblinGame
-    project_c: /Users/quning/work/GoblinGame/GoblinC
+    project_creator: /Users/quning/work/GoblinGame/goblin-creator
+    project_cocos: /Users/quning/work/GoblinGame/cocos-engine-topjoy
     project_lua: /Users/quning/work/GoblinGame/GoblinLua
-    project_res: /Users/quning/work/GoblinGame/svn/frontend/Assets_link
-    project_cfg: /Users/quning/work/GoblinGame/svn/frontend/config_link
-    res_path: /Users/quning/work/GoblinGame/Resources
+    project_res: /Users/quning/work/GoblinGame/goblinsvn/frontend/Assets_link
+    project_cfg: /Users/quning/work/GoblinGame/goblinsvn/frontend/config_link
+    res_path: /Users/quning/work/GoblinGame/resources
     mtool_path: /Users/quning/work/GoblinGame/mtool/env/bin/mtl
 
 
