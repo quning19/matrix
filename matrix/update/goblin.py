@@ -33,9 +33,9 @@ def update_goblin_res(**options):
     if options['lua'] or show_all:
         has_update = gitutil.git_update(project_setting['project_lua'])
         print('Lua Updated = %s'%has_update)
-        if has_update:
-            mtool = sh.Command(mtl_cmd)
-            mtool('luaalt', _out=sys.stdout, _err=sys.stdout)
+        # if has_update:
+        #     mtool = sh.Command(mtl_cmd)
+        #     mtool('luaalt', _out=sys.stdout, _err=sys.stdout)
 
     if options['res'] or show_all:
         res_path = os.path.realpath(project_setting['project_res'])
