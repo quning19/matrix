@@ -49,5 +49,9 @@ from matrix.tools import RenameAssetsForApk
 main.add_command(RenameAssetsForApk.zip_all_files, name='zipall')
 
 
+from matrix.tools import FindFiles
+main.add_command(FindFiles.findFiles, name='findFiles')
+
+
 if __name__ == '__main__':
     main()

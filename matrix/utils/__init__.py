@@ -41,4 +41,6 @@ def get_all_file_list(find_dir, all_file_name, ext=None):
             if ext == None or ext in os.path.splitext(file_path)[1]:
                 all_file_name.append(file_path)
 
+    return all_file_name
+
 
