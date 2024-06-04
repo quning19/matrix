@@ -1,7 +1,8 @@
 import os
+if os.name != 'nt':
+    import sh
 import shutil
 import tempfile
-import sh
 from matrix.utils import common_utils
 import sys
 

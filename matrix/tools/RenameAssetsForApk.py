@@ -1,8 +1,6 @@
 #coding=utf-8
 
 import os
-import sh
-import sys
 import click
 import zipfile
 import datetime

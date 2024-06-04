@@ -1,5 +1,5 @@
 import os
-import sh
+# import sh
 
 walle_path = os.path.abspath(
         os.path.join(os.path.dirname(__file__), '..', '..'))

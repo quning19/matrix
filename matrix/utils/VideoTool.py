@@ -1,7 +1,8 @@
 #coding=utf-8
 
 import os
-import sh
+if os.name != 'nt':
+    import sh
 import sys
 import click
 from matrix.utils import *

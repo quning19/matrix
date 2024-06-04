@@ -1,9 +1,10 @@
 #coding=utf-8
 
 import click
-import sh
 import sys
 import os
+if os.name != 'nt':
+    import sh
 import shutil
 from matrix.utils import common_utils
 from matrix.utils import svnutil

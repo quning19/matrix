@@ -1,8 +1,7 @@
 #coding=utf-8
 
 import click
-import sh
-import sys
+
 from matrix.utils import common_utils
 from matrix.utils import svnutil
 from matrix.utils import gitutil
