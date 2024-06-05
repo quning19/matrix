@@ -1,5 +1,4 @@
 import os
-# import sh
 
 walle_path = os.path.abspath(
         os.path.join(os.path.dirname(__file__), '..', '..'))
@@ -43,4 +42,18 @@ def get_all_file_list(find_dir, all_file_name, ext=None):
 
     return all_file_name
 
+import logging
+from matrix.utils.MLogger import MLogger
+logger_list = []
 
+def getLogger(name):
+
+    logger = MLogger(name)
+    logger_list.append(logger)
+    return logger
+
+
+def setLoggerLevel(logger_level):
+    for i in range(len(logger_list)):
+        logger = logger_list[i]
+        logger.setLevel(logger_level or logging.INFO)
