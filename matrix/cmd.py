@@ -51,20 +51,26 @@ from matrix.tools import FindFiles
 main.add_command(FindFiles.findFiles, name='findFiles')
 
 
-
 @click.command()
+
 def run_calc_probability(**options):
     """Calc Probability """
     from matrix.games.CalcProbability import CalcProbability
     job = CalcProbability(options)
-    # from matrix.tests.test_click_times import ClickSimulator
-    # job = ClickSimulator(options)
     job.run()
-
 
 main.add_command(run_calc_probability, name='cp')
 
 
+@click.option('-i', '--input-path', required=True, help='csv文件读取路径')
+@click.command()
+def run_dsp(**options):
+    """DSP SEED CALC"""
+    from matrix.games.DSPSeedFind import DSPSeedFind
+    job = DSPSeedFind(options)
+    job.run()
+
+main.add_command(run_dsp, name='dsp')
 
 if __name__ == '__main__':
     main()
