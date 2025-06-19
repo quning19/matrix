@@ -70,7 +70,24 @@ def run_dsp(**options):
     job = DSPSeedFind(options)
     job.run()
 
+@click.option('-p', '--work-path', required=True, help='json文件读取路径')
+@click.command()
+def run_d2r_language_modify(**options):
+    """Language Modify"""
+    from matrix.games.d2rReimagined.LanguageModify import LanguageModify
+    job = LanguageModify(options)
+    job.run()
+
+@click.command()
+def run_d2r_item_finder(**options):
+    """item finder"""
+    from matrix.games.d2rReimagined.ItemFinder import ItemFinder
+    job = ItemFinder(options)
+    job.run()
+
 main.add_command(run_dsp, name='dsp')
+main.add_command(run_d2r_language_modify, name='d2rl')
+main.add_command(run_d2r_item_finder, name='d2ri')
 
 if __name__ == '__main__':
     main()
