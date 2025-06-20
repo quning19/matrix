@@ -1,16 +1,20 @@
 #coding=utf-8
 
 import os
+import shutil
 
 import yaml
 import pandas as pd
+from openpyxl.styles import Font, Alignment
 from matrix.base.BaseJob import BaseJob
 
 
 class ItemFinder(BaseJob):
 
     excel_relative_path = 'data/global/excel/'
-    work_path = None
+    excel_path = None
+    output_path = None
+    debug_path = None
 
     base_item_info = {
         'file_names' : [
@@ -24,12 +28,12 @@ class ItemFinder(BaseJob):
         }
     }
 
-    config_list = [
+    file_and_field_list = [
         {
             'file_name': 'uniqueitems.txt',
             'fields': {
                 'Name' : 'index',
-                'BaseItem': '*ItemName',
+                'code' : 'code',
                 'Lvl.Req': 'lvl req',
             },
             'prop_fields': {
@@ -38,14 +42,53 @@ class ItemFinder(BaseJob):
                 'min_value' : 'min',
                 'max_value' : 'max',
             },
+        },
+        {
+            'file_name': 'setitems.txt',
+            'fields': {
+                'Name' : 'index',
+                'code': 'item',
+                'Lvl.Req': 'lvl req',
+            },
+            'prop_fields': {
+                'prop_name' : 'prop',
+                'param_name' : 'par',
+                'min_value' : 'min',
+                'max_value' : 'max',
+            },
+        },
+        {
+            'file_name': 'runes.txt',
+            'fields': {
+                'Name' : 'Name',
+                'itype1': 'itype1',
+                'itype2': 'itype2',
+                'itype3': 'itype3',
+                'itype4': 'itype4',
+                'itype5': 'itype5',
+                'itype6': 'itype6',
+            },
+            'prop_fields': {
+                'prop_name' : 'T1Code',
+                'param_name' : 'T1Param',
+                'min_value' : 'T1Min',
+                'max_value' : 'T1Max',
+            },
+        }
+    ]
+
+    config_list = [
+        {
+            'export_name': 'Crushing Blow & Open Wounds Items',
             'check_conditions': {
                 'logic': 'OR',
                 'conditions': [
-                    {"path": "crush.min", "operator": ">", "threshold": 40},
+                    {"path": "crush.min", "operator": ">", "threshold": 10},
+                    {"path": "dmg.max", "operator": ">", "threshold": 100},
+                    {"path": "hit-skill.parm", "operator": "==", "threshold": 'Life Tap'},
                     {
                         'logic': 'AND',
                         'conditions': [
-                            {"path": "crush.min", "operator": ">", "threshold": 0},
                             {"path": "openwounds.min", "operator": ">", "threshold": 20},
                         ]
                     }
@@ -54,11 +97,17 @@ class ItemFinder(BaseJob):
 
             'export_mapping': {
                 'Name': 'Name',
+                'Source': 'source',
+                'MainType': 'MainType',
                 'Type': 'Type',
                 'BaseItem': 'BaseItem',
                 'Lvl.Req': 'Lvl.Req',
                 'openwounds': 'openwounds.min',
                 'crushing blow': 'crush.min',
+                '+ damage': 'dmg.max',
+                'location': 'BodyLoc1',
+                'Faster Block': 'block2',
+                'hit-skill': 'hit-skill.parm',
             }
         },
     ]
@@ -71,48 +120,139 @@ class ItemFinder(BaseJob):
         with open(yaml_path, 'r', encoding='utf-8') as f:
             self.d2r_config = yaml.load(f, yaml.FullLoader)
 
-        self.work_path = self.d2r_config['mod_d2rr_root']
+        self.excel_path = os.path.join(self.d2r_config['mod_d2rr_root'], self.excel_relative_path)
+        self.output_path = self.get_options('output_path')
+        self.debug_path = os.path.join(self.output_path, 'debug')
+        if os.path.exists(self.debug_path):
+            shutil.rmtree(self.debug_path)
+        os.makedirs(self.debug_path)
+    #     self.
+    #         export_path = None
+    # debug_path = None
 
     def run(self):
         self.logger.info('start')
 
-        excel_dir = os.path.join(self.work_path, self.excel_relative_path)
-        if not os.path.exists(excel_dir):
-            self.logger.error(f'Excel directory not found: {excel_dir}')
+        if not os.path.exists(self.excel_path):
+            self.logger.error(f'Excel directory not found: {self.excel_path}')
             return
         
-        self.read_type_files()
-        
-        for config in self.config_list:
-            file_name = config['file_name']
-            file_path = os.path.join(excel_dir, file_name)
+        self.load_item_type()
+
+        # 初始化空DataFrame
+        combined_items_df = pd.DataFrame()
+
+        for file_and_field in self.file_and_field_list:
+            # print(file_and_field)
+            file_name = file_and_field['file_name']
+            file_path = os.path.join(self.excel_path, file_name)
             if not os.path.exists(file_path):
                 self.logger.error(f'File not found: {file_path}')
                 continue
-            
-            check_conditions = config['check_conditions']
 
             # 读取CSV文件并转换
-            items_df = self.read_csv_file(file_path, config['fields'], config['prop_fields'])
-            items_df = self.merge_base_item_info(items_df)
+            items_df = self.read_csv_file(file_path, file_and_field['fields'], file_and_field['prop_fields'])
+            items_df = items_df.copy()
+            items_df['source'] = os.path.splitext(file_name)[0]  # 添加文件名列
+
+            items_df.to_excel(os.path.join(self.debug_path, f'items_df.xlsx'), index=False)
+            if file_name == 'runes.txt':
+                items_df = self.map_typeshort_to_type(        
+                    input_df = items_df,
+                    mapping_df = self.item_type_mappings,
+                    code_columns=['itype1', 'itype2', 'itype3', 'itype4', 'itype5', 'itype6']
+                )
+                items_df['code'] = 'None'
+
+            # 追加到总DataFrame
+            combined_items_df = pd.concat([combined_items_df, items_df], ignore_index=True)
+
+        # 去除重复项（根据需求选择是否执行）
+        self.logger.info('去除重复项')
+        combined_items_df = combined_items_df.drop_duplicates()
+        # combined_items_df.to_excel(os.path.join(self.debug_path, 'combined_items.xlsx'), index=False)
+
+        self.logger.info('合并基础物品信息')
+        items_df = self.merge_base_item_info(combined_items_df)
+        
+        for config in self.config_list:
+            export_name = config['export_name']
+            check_conditions = config['check_conditions']
+            self.logger.info('Checking conditions: %s'%export_name)
 
             items_found = self.find_item_matches(items_df, check_conditions)
-            self.export_to_excel(items_found, config['export_mapping'], output_file=os.path.join(self.work_path, f'export_{file_name}.xlsx'))
+            items_found.to_excel(os.path.join(self.debug_path, f'items_found.xlsx'), index=False)
+            self.export_to_excel(items_found, config['export_mapping'], output_file=os.path.join(self.output_path, f'{export_name}.xlsx'))
 
+    def map_typeshort_to_type(self, input_df, mapping_df, code_columns, output_column='itype'):
+        """
+        将DataFrame中的代码列映射为对应的物品类型
+        
+        参数:
+        input_df (pd.DataFrame): 包含代码列的输入DataFrame
+        mapping_df (pd.DataFrame): 包含代码到物品类型映射的DataFrame
+        code_columns (list): 需要映射的代码列名列表
+        
+        返回:
+        pd.DataFrame: 包含映射结果的DataFrame
+        """
+        # 创建代码到物品类型的映射字典（忽略大小写）
+        code_to_itemtype = {
+            TypeShort: item_type 
+            for TypeShort, item_type in zip(mapping_df['TypeShort'], mapping_df['Type'])
+        }
+        
+        # 复制原始DataFrame，避免修改原数据
+        result_df = input_df.copy()
+        
+        # 对每行中的每个代码列进行映射，并合并结果
+        result_df[output_column] = result_df[code_columns].apply(
+            lambda row: ','.join(
+                code_to_itemtype.get(str(code).lower(), code)  # 找不到映射时保留原代码
+                for code in row 
+                if pd.notna(code)
+            ),
+            axis=1
+        )
+        
+        result_df.to_excel(os.path.join(self.debug_path, f'result_df.xlsx'), index=False)
+
+        return result_df
     def merge_base_item_info(self, items_df):
 
-        items_df['BaseItem_lower'] = items_df['BaseItem'].str.lower()
-
-        print(items_df)
+        # print(items_df)
+        # print(self.base_item_mappings)
 
         # 合并到主DataFrame
         merged_df = items_df.merge(
             self.base_item_mappings,
-            on='BaseItem_lower',
+            on='code',
             how='left',
             suffixes=('', '_1')
         )
-        print(merged_df)
+
+
+        # 将itype列的值合并到Type列中，按指定规则处理
+
+        def merge_values(row):
+            type_val = row['Type']
+            itype_val = row['itype']
+            
+            # 如果Type为空，用itype填充
+            if pd.isna(type_val) or type_val == 'None':
+                return itype_val
+            # 如果itype为空，保持Type不变
+            elif pd.isna(itype_val):
+                return type_val
+            # 如果两者都不为空，使用Type并记录警告
+            else:
+                self.logger.warning(f"行 {row.name}: Type='{type_val}' 和 itype='{itype_val}' 都不为空，使用Type")
+                return type_val
+        
+        # 应用合并逻辑
+        merged_df['Type'] = merged_df.apply(merge_values, axis=1)
+
+        # print(merged_df)
         return merged_df
     def export_to_excel(self, dataframe, export_mapping, output_file='output.xlsx'):
         """
@@ -131,18 +271,48 @@ class ItemFinder(BaseJob):
                 export_df[excel_col] = dataframe[df_col]
         
         # 导出到Excel
-        export_df.to_excel(output_file, index=False)
-        print(f"数据已成功导出到 {output_file}")
+        # export_df.to_excel(output_file, index=False)
+
+        with pd.ExcelWriter(output_file, engine='openpyxl') as writer:
+            export_df.to_excel(writer, sheet_name='Sheet1', index=False)
+            
+            # 获取工作簿和工作表对象
+            workbook = writer.book
+            worksheet = writer.sheets['Sheet1']
+            
+            # 获取数据的最大列索引和最大行索引
+            max_col = export_df.shape[1]
+            max_row = export_df.shape[0]
+            
+            # 添加筛选器，范围从 A1 到最后一列最后一行
+            worksheet.auto_filter.ref = f'A1:{chr(64 + max_col)}{max_row + 1}'  # 列索引转字母
+            # 自动调整列宽
+            for column_cells in worksheet.columns:
+                length = max(len(str(cell.value)) for cell in column_cells)
+                adjusted_width = (length + 2) * 1.2  # 适当增加宽度
+                column_letter = chr(64 + column_cells[0].column)  # 列索引转字母
+                worksheet.column_dimensions[column_letter].width = min(adjusted_width, 50)  # 限制最大宽度
+
+            # 居中对齐所有单元格（包括表头）
+            for row in worksheet.iter_rows(min_row=1, max_row=max_row + 1, min_col=1, max_col=max_col):
+                for cell in row:
+                    cell.font = Font(name='InconsolataLGC NF', size=12)  # 设置字体
+                    cell.alignment = Alignment(horizontal='center', vertical='center')
+
+        self.logger.info(f"数据已成功导出到 {output_file}")
         return export_df
     
 
-    def read_type_files(self):
+    def load_item_type(self):
         config = self.base_item_info
-        all_mappings = pd.DataFrame(columns=[config['fields']['BaseItem'], config['fields']['Type']])
+        # 选择需要的列并添加到总映射
+        name_col = config['fields']['BaseItem']
+        type_col = config['fields']['Type']
+        base_item_mapping = pd.DataFrame(columns=['code', name_col, type_col])
  
         # 读取并合并所有映射表
         for file_name in config['file_names']:
-            file_path = os.path.join(self.work_path, self.excel_relative_path, file_name)
+            file_path = os.path.join(self.excel_path, file_name)
             try:
                 # 根据文件扩展名选择读取方法
                 if file_path.endswith('.txt'):
@@ -152,15 +322,13 @@ class ItemFinder(BaseJob):
                 else:
                     print(f"不支持的文件格式: {file_path}")
                     continue
+
+                mapping_df['MainType'] = file_name.split('.')[0]
                     
-                # 选择需要的列并添加到总映射
-                name_col = config['fields']['BaseItem']
-                type_col = config['fields']['Type']
-                
                 if name_col in mapping_df.columns and type_col in mapping_df.columns:
-                    all_mappings = pd.concat([
-                        all_mappings,
-                        mapping_df[[name_col, type_col]]
+                    base_item_mapping = pd.concat([
+                        base_item_mapping,
+                        mapping_df[['code', name_col, type_col,'MainType']]
                     ], ignore_index=True)
                 else:
                     print(f"映射表 {file_path} 缺少必要的列: {name_col} 或 {type_col}")
@@ -168,14 +336,74 @@ class ItemFinder(BaseJob):
                 print(f"读取映射表 {file_path} 时出错: {e}")
         
         # 去除重复项
-        all_mappings = all_mappings.drop_duplicates(subset=[config['fields']['BaseItem']])
+        base_item_mapping = base_item_mapping.drop_duplicates(subset=[config['fields']['BaseItem']])
 
-        self.base_item_mappings = all_mappings.rename(columns={
+        base_item_mapping = base_item_mapping.rename(columns={
             config['fields']['BaseItem']: 'BaseItem',
-            config['fields']['Type']: 'Type'
+            config['fields']['Type']: 'TypeShort'
         })
 
-        self.base_item_mappings['BaseItem_lower'] = self.base_item_mappings['BaseItem'].str.lower()
+        #     code     BaseItem TypeShort
+        # 0    cap          Cap      helm
+        # 1    skp    Skull Cap      helm
+        # 2    hlm         Helm      helm
+
+        # print(base_item_mapping)
+        # base_item_mapping.to_excel(os.path.join(self.debug_path, 'base_item_mapping.xlsx'), index=False)
+
+        file_path = os.path.join(self.excel_path, 'itemtypes.txt')
+        try:
+            # 根据文件扩展名选择读取方法
+            if file_path.endswith('.txt'):
+                itemtype_df = pd.read_csv(file_path, sep='\t')
+            elif file_path.endswith(('.xlsx', '.xls')):
+                itemtype_df = pd.read_excel(file_path)
+            else:
+                print(f"不支持的文件格式: {file_path}")
+                
+        except Exception as e:
+            print(f"读取映射表 {file_path} 时出错: {e}")
+
+
+        itemtype_df = itemtype_df.rename(columns={
+            'Code': 'TypeShort',
+            'ItemType': 'Type'
+        })
+        itemtype_df = itemtype_df[['TypeShort', 'Type', 'BodyLoc1']]
+        itemtype_df.loc[itemtype_df['TypeShort'] == 'helm', 'Type'] = 'Helm'
+
+        #     TypeShort                 Type
+        # 0         NaN                  Any
+        # 1        none                  NaN
+        # 2        shie               Shield
+        # 3        tors                Armor
+
+        # print(itemtype_df)
+        # itemtype_df.to_excel(os.path.join(self.debug_path, 'itemtype_df.xlsx'), index=False)
+
+        # 合并到主DataFrame
+        merged_base_item_mapping = base_item_mapping.merge(
+            itemtype_df,
+            left_on='TypeShort',
+            right_on='TypeShort',
+            how='left',
+            suffixes=('', '_1')
+        )
+
+        # merged_base_item_mapping.to_excel(os.path.join(self.debug_path, 'merged_base_item_mapping.xlsx'), index=False)
+
+        # print(merged_df)
+        self.item_type_mappings = itemtype_df
+        self.base_item_mappings = merged_base_item_mapping
+        # code	BaseItem	TypeShort	Type
+        # cap	Cap	helm	Helm
+        # skp	Skull Cap	helm	Helm
+        # hlm	Helm	helm	Helm
+        # fhl	Full Helm	helm	Helm
+
+        # merged_base_item_mapping.to_excel(os.path.join(self.debug_path, 'merged_base_item_mapping.xlsx'), index=False)
+
+
 
     def find_item_matches(self, item_list, check_conditions):
         # 动态应用条件
@@ -223,13 +451,15 @@ class ItemFinder(BaseJob):
         self.logger.info(f'Reading file: {item_file_path}')
             
         df = pd.read_csv(item_file_path, index_col=False, sep='\t')
+
+        self.logger.info(f'读取属性信息')
         def transform_row(row):
             result = {}
-            num_props = len([col for col in df.columns if col.startswith('prop')])
+            num_props = len([col for col in df.columns if col.startswith(prop_fields['prop_name'])])
 
             for key, value in fields.items():
-                v = row[value] if pd.notna(row[value]) else 0
-                if isinstance(v, float):
+                v = row[value]
+                if pd.notna(v) and isinstance(v, float):
                     v = int(v)
                 result[key] = v
 
@@ -245,7 +475,7 @@ class ItemFinder(BaseJob):
                 result[f"{prop}.parm"] = par
 
             return pd.Series(result)
-
+        
         transformed_df = df.apply(transform_row, axis=1)
         return transformed_df
 

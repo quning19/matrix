@@ -78,6 +78,7 @@ def run_d2r_language_modify(**options):
     job = LanguageModify(options)
     job.run()
 
+@click.option('-o', '--output-path', required=True, help='输出路径')
 @click.command()
 def run_d2r_item_finder(**options):
     """item finder"""
