@@ -435,6 +435,61 @@ class ItemFinder(BaseJob):
             }
         },
         {
+            'enable': True,
+            'export_name': 'Cold Damage',
+            'check_conditions': {
+                'logic': 'OR',
+                'conditions': [
+                    # 审判光环
+                    {"path": "aura.parm", "operator": "==", "threshold": 'Conviction'},
+                    # 降低冰抗
+                    {"path": "pierce-cold.max", "operator": ">", "threshold": 10},
+                    # 技能且FCR
+                    {
+                        'logic': 'AND',
+                        'conditions': [
+                            {"path": "cast3.max", "operator": ">", "threshold": 10},
+                            {
+                                'logic': 'OR',
+                                'conditions': [
+                                    {"path": "allskills.max", "operator": ">=", "threshold": 1},
+                                    {"path": "coldskill.max", "operator": ">=", "threshold": 1},
+                                    {"path": "sor.max", "operator": ">=", "threshold": 1},
+                                ]
+                            },
+                        ]
+                    },
+                    # mf
+                    {"path": "mag%/lvl.parm", "operator": ">", "threshold": 5},
+                    {"path": "mag%.max", "operator": ">", "threshold": 30},
+                ]
+
+            },
+
+            'export_mapping': {
+                'Name': 'Name',
+                'isOriginal': 'isOriginal',
+                'Source': 'source',
+                'MainType': 'MainType',
+                'Type': 'Type',
+                'BaseItem': 'BaseItem',
+                'Lvl.Req': 'Lvl.Req',
+                'location': 'BodyLoc1',
+                'Aura': 'aura.parm',
+                'Aura Lvl': 'aura.max',
+                'Enemy Cold Res': 'pierce-cold.max',
+                'Cold Skill Damage': 'extra-cold.max',
+                'Faster Cast Rate': 'cast3.max',
+                'AllSkills': 'allskills.max',
+                'Cold Skill': 'coldskill.max',
+                'Sorceress Skill': 'sor.max',
+                'Magic Find': 'mag%.max',                
+                'Magic Find/Level': 'mag%/lvl.parm',
+                'AR.min': 'res-all.min',
+                'AR.max': 'res-all.max',
+            }
+        },
+        {
             'enable': False,
             'export_name': 'Crushing Blow & Open Wounds Items',
             'check_conditions': {
