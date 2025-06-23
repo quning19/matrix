@@ -78,7 +78,7 @@ def run_d2r_language_modify(**options):
     job = LanguageModify(options)
     job.run()
 
-@click.option('-o', '--output-path', required=True, help='输出路径')
+@click.option('-w', '--work-path', required=True, help='工作路径')
 @click.command()
 def run_d2r_item_finder(**options):
     """item finder"""
@@ -86,9 +86,20 @@ def run_d2r_item_finder(**options):
     job = ItemFinder(options)
     job.run()
 
+@click.option('-o', '--original-path', required=True, help='原始excel输出路径')
+@click.option('-w', '--work-path', required=True, help='工作路径')
+@click.command()
+def run_d2r_item_details(**options):
+    """item finder"""
+    from matrix.games.d2rReimagined.ItemFinder import ItemDetailsGenerator
+    job = ItemDetailsGenerator(options)
+    job.run()
+
 main.add_command(run_dsp, name='dsp')
 main.add_command(run_d2r_language_modify, name='d2rl')
-main.add_command(run_d2r_item_finder, name='d2ri')
+main.add_command(run_d2r_item_finder, name='d2rf')
+main.add_command(run_d2r_item_details, name='d2rd')
+
 
 if __name__ == '__main__':
     main()
