@@ -409,6 +409,34 @@ class ItemFinder(BaseJob):
     config_list = [
         {
             'enable': True,
+            'export_name': 'Gloves IAS & 4R',
+            'check_conditions': {
+                'logic': 'AND',
+                'conditions': [
+                    {"path": "res-all.min", "operator": ">", "threshold": 10},
+                    {"path": "Type", "operator": "==", "threshold": 'Gloves'},
+                    {"path": ["swing1.max","swing2.max","swing3.max"], "operator": ">", "threshold": 0},
+                ]
+            },
+
+            'export_mapping': {
+                'Name': 'Name',
+                'isOriginal': 'isOriginal',
+                'Source': 'source',
+                'MainType': 'MainType',
+                'Type': 'Type',
+                'BaseItem': 'BaseItem',
+                'Lvl.Req': 'Lvl.Req',
+                'location': 'BodyLoc1',
+                'hit-skill': 'hit-skill.parm',
+                'IAS': 'swing1.max',
+                'IAS': 'swing1.max',
+                'AR.min': 'res-all.min',
+                'AR.max': 'res-all.max',
+            }
+        },
+        {
+            'enable': False,
             'export_name': 'Pet Aura',
             'check_conditions': {
                 'logic': 'OR',
@@ -435,7 +463,7 @@ class ItemFinder(BaseJob):
             }
         },
         {
-            'enable': True,
+            'enable': False,
             'export_name': 'Cold Damage',
             'check_conditions': {
                 'logic': 'OR',
@@ -460,8 +488,8 @@ class ItemFinder(BaseJob):
                         ]
                     },
                     # mf
-                    {"path": "mag%/lvl.parm", "operator": ">", "threshold": 5},
-                    {"path": "mag%.max", "operator": ">", "threshold": 30},
+                    {"path": "mag%/lvl.parm", "operator": ">=", "threshold": 5},
+                    {"path": "mag%.max", "operator": ">=", "threshold": 30},
                 ]
 
             },
@@ -562,15 +590,19 @@ class ItemFinder(BaseJob):
         items_df = pd.read_excel(item_detail_file_path, index_col=False)
         
         for config in self.config_list:
-            if config['enable'] == False:
-                continue
-            export_name = config['export_name']
-            check_conditions = config['check_conditions']
-            self.logger.info('Checking conditions: %s'%export_name)
+            try:
+                if config['enable'] == False:
+                    continue
+                export_name = config['export_name']
+                check_conditions = config['check_conditions']
+                self.logger.info('Checking conditions: %s'%export_name)
 
-            items_found = self.find_item_matches(items_df, check_conditions)
-            items_found.to_excel(os.path.join(self.debug_path, f'items_found.xlsx'), index=False)
-            self.export_to_excel(items_found, config['export_mapping'], output_file=os.path.join(self.work_path, f'{export_name}.xlsx'))
+                items_found = self.find_item_matches(items_df, check_conditions)
+                items_found.to_excel(os.path.join(self.debug_path, f'items_found.xlsx'), index=False)
+                self.export_to_excel(items_found, config['export_mapping'], output_file=os.path.join(self.work_path, f'{export_name}.xlsx'))
+            except Exception as e:
+                # 处理主逻辑异常
+                self.logger.error(f"错误: 应用条件时发生异常 - {str(e)}")
 
 
     def export_to_excel(self, dataframe, export_mapping, output_file='output.xlsx'):
@@ -626,24 +658,41 @@ class ItemFinder(BaseJob):
     def find_item_matches(self, item_list, check_conditions):
         # 动态应用条件
         def apply_condition(df, condition):
-            path = condition["path"]
+            paths = condition["path"]
             op = condition["operator"]
             threshold = condition["threshold"]
+
+            # 初始化结果掩码
+            result_mask = pd.Series([False] * len(df))
+
+            if isinstance(paths, str):
+                paths = [paths]
+
+            for path in paths:
+                if path not in df.columns:
+                    raise ValueError(f"列不存在: {path}")
+                
+                series = df[path]
             
-            if op == ">":
-                return df[path] > threshold
-            elif op == "<":
-                return df[path] < threshold
-            elif op == ">=":
-                return df[path] >= threshold
-            elif op == "<=":
-                return df[path] <= threshold
-            elif op == "==":
-                return (df[path] == threshold) | (df[path] == threshold.lower())
-            elif op == "!=":
-                return df[path] != threshold
-            else:
-                raise ValueError(f"Unsupported operator: {op}")
+                if op == ">":
+                    current_mask = series > threshold
+                elif op == "<":
+                    current_mask = series < threshold
+                elif op == ">=":
+                    current_mask = series >= threshold
+                elif op == "<=":
+                    current_mask = series <= threshold
+                elif op == "==":
+                    current_mask = (series == threshold) | (series == threshold.lower())
+                elif op == "!=":
+                    current_mask = series != threshold
+                else:
+                    raise ValueError(f"Unsupported operator: {op}")
+                
+                # 更新结果掩码（任意列满足条件即可）
+                result_mask |= current_mask
+
+            return result_mask
 
         def apply_conditions(df, config):
             if "logic" in config:
