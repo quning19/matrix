@@ -159,6 +159,7 @@ class ItemDetailsGenerator(BaseJob):
         output_file = os.path.join(self.work_path, 'ItemDetails.xlsx')
         self.logger.info(f"数据导出到 {output_file}")
         items_df.to_excel(output_file, index=False)
+        self.logger.info("导出完成")
 
     def modify_rune_item_df(self, items_df, file_and_field):
         items_df = self.map_typeshort_to_type(        
@@ -403,9 +404,20 @@ class ItemDetailsGenerator(BaseJob):
                 max_val = row[prop_fields['max_value'] + f'{i}']
                 
                 # 添加 .min 和 .max 键值对
-                result[f"{prop}.min"] = min_val
-                result[f"{prop}.max"] = max_val
-                result[f"{prop}.parm"] = par
+
+                if prop == 'oskill':
+                    if f"{prop}.parm" in result:
+                        result[f"{prop}.parm"] = result[f"{prop}.parm"] + '\n' + par
+                        result[f"{prop}.min"] = str(result[f"{prop}.min"]) + '\n' + str(int(min_val))
+                        result[f"{prop}.max"] = str(result[f"{prop}.max"]) + '\n' + str(int(max_val))
+                    else:
+                        result[f"{prop}.parm"] = par
+                        result[f"{prop}.min"] = int(min_val)
+                        result[f"{prop}.max"] = int(max_val)
+                else:
+                    result[f"{prop}.parm"] = par
+                    result[f"{prop}.min"] = min_val
+                    result[f"{prop}.max"] = max_val
 
             return pd.Series(result)
         
@@ -473,7 +485,7 @@ class ItemFinder(BaseJob):
             'check_conditions': {
                 'logic': 'AND',
                 'conditions': [
-                    {"path": "oskill.max", "operator": ">", "threshold": 0},      # 光环  
+                    {"path": "oskill.parm", "operator": "notnull"},
                 ]
             },
 
@@ -855,6 +867,11 @@ class ItemFinder(BaseJob):
                 adjusted_width = (length + 2) * 1.2  # 适当增加宽度
                 column_letter = chr(64 + column_cells[0].column)  # 列索引转字母
                 worksheet.column_dimensions[column_letter].width = min(adjusted_width, 50)  # 限制最大宽度
+
+            # 设置自动换行和垂直对齐为居中
+            for row in worksheet.iter_rows(min_row=1, max_row=worksheet.max_row, max_col=worksheet.max_column):
+                for cell in row:
+                    cell.alignment = Alignment(wrap_text=True, vertical='center')
 
             # 居中对齐所有单元格（包括表头）
             for row in worksheet.iter_rows(min_row=1, max_row=max_row + 1, min_col=1, max_col=max_col):
