@@ -72,6 +72,12 @@ class ItemDetailsGenerator(BaseJob):
                 'itype4': 'itype4',
                 'itype5': 'itype5',
                 'itype6': 'itype6',
+                'Rune1': 'Rune1',
+                'Rune2': 'Rune2',
+                'Rune3': 'Rune3',
+                'Rune4': 'Rune4',
+                'Rune5': 'Rune5',
+                'Rune6': 'Rune6',
             },
             'prop_fields': {
                 'prop_name' : 'T1Code',
@@ -125,7 +131,7 @@ class ItemDetailsGenerator(BaseJob):
             items_df = items_df.copy()
             items_df['source'] = os.path.splitext(file_name)[0]  # 添加文件名列
 
-            items_df.to_excel(os.path.join(self.debug_path, f'items_df.xlsx'), index=False)
+            items_df.to_excel(os.path.join(self.debug_path, f'{file_name}.xlsx'), index=False)
             if file_name == 'runes.txt':
                 items_df = self.modify_rune_item_df(items_df, file_and_field)
 
@@ -147,7 +153,7 @@ class ItemDetailsGenerator(BaseJob):
 
         skill_path = os.path.join(self.excel_path, 'skills.txt')
         self.logger.info(f'读取技能信息')
-        items_df = self.match_and_replace(items_df, ['aura.parm'],
+        items_df = self.match_and_replace(items_df, ['aura.parm', 'hit-skill.parm'],
                                         skill_path, '*Id', 'skill')
         
         output_file = os.path.join(self.work_path, 'ItemDetails.xlsx')
@@ -171,6 +177,14 @@ class ItemDetailsGenerator(BaseJob):
         completed_items_df = self.read_csv_file(completed_file_path, file_and_field['fields'])
 
         items_df['isOriginal'] = items_df['Name'].isin(completed_items_df['Name']).map({True: 'True', False: ''})
+
+        # 根据rune处理等级需求
+        rune_columns = [col for col in items_df.columns if col.startswith('Rune')]
+        
+        for col in rune_columns:
+            # 先将空值（包括 NaN、空字符串、非数字字符）替换为 'r0'，再提取数字
+            items_df[col] = items_df[col].fillna('r0').str.extract(r'(\d+)', expand=False).astype(int)
+        items_df['Lvl.Req'] = items_df[rune_columns].max(axis=1) * 2 + 3
 
         return items_df
     
@@ -409,13 +423,168 @@ class ItemFinder(BaseJob):
     config_list = [
         {
             'enable': True,
-            'export_name': 'Gloves IAS & 4R',
+            'export_name': 'Bow & Crossbow Valueable',
             'check_conditions': {
                 'logic': 'AND',
                 'conditions': [
-                    {"path": "res-all.min", "operator": ">", "threshold": 10},
-                    {"path": "Type", "operator": "==", "threshold": 'Gloves'},
-                    {"path": ["swing1.max","swing2.max","swing3.max"], "operator": ">", "threshold": 0},
+                    {"path": "Type", "operator": "in", "threshold": ['Bow', 'Amazon Bow', 'Crossbow', 'Magic Bow Quiv', 'Magic Xbow Quiv', 'Missile Weapon']},
+                    {
+                        'logic': 'OR',
+                        'conditions': [
+                            {"path": "hit-skill.max", "operator": ">", "threshold": 0},      # 触发技能
+                            {"path": "aura.max", "operator": ">", "threshold": 0},      # 光环
+                            {"path": "pierce.max", "operator": ">", "threshold": 0},    # 穿刺
+                            {"path": "explosivearrow.max", "operator": ">", "threshold": 0},    # 爆炸箭
+                        ]
+                    },
+                ]
+            },
+
+            'export_mapping': {
+                'Name': 'Name',
+                'isOriginal': 'isOriginal',
+                'Source': 'source',
+                'MainType': 'MainType',
+                'Type': 'Type',
+                'BaseItem': 'BaseItem',
+                'Lvl.Req': 'Lvl.Req',
+                'AllSkills': 'allskills.max',
+                'Amazon Skill': 'ama.max',
+                'Amazon Skill': 'skilltab.parm',
+                'Bow or Passive Skill': 'skilltab.max',
+                'Explosive Arrow': 'explosivearrow.max',
+                'Piercing Attack': 'pierce.max',
+                'Aura': 'aura.parm',
+                'Aura Lvl': 'aura.max',
+                'oskill': 'oskill.parm',
+                'oskill Level': 'oskill.max',
+                'hit-skill': 'hit-skill.parm',
+                'hit-skill rate': 'hit-skill.max',
+                'Faster Cast Rate1': 'cast1.max',
+                'Faster Cast Rate2': 'cast2.max',
+                'Faster Cast Rate3': 'cast3.max',
+                'AR.min': 'res-all.min',
+                'AR.max': 'res-all.max',
+            }
+        },
+        {
+            'enable': True,
+            'export_name': 'OSkill Items',
+            'check_conditions': {
+                'logic': 'AND',
+                'conditions': [
+                    {"path": "oskill.max", "operator": ">", "threshold": 0},      # 光环  
+                ]
+            },
+
+            'export_mapping': {
+                'Name': 'Name',
+                'isOriginal': 'isOriginal',
+                'Source': 'source',
+                'MainType': 'MainType',
+                'Type': 'Type',
+                'BaseItem': 'BaseItem',
+                'Lvl.Req': 'Lvl.Req',
+                'oskill': 'oskill.parm',
+                'oskill Level': 'oskill.max',
+                'AllSkills': 'allskills.max',
+                'Amazon Skill': 'ama.max',
+                'Amazon Skill': 'skilltab.parm',
+                'Bow or Passive Skill': 'skilltab.max',
+                'Explosive Arrow': 'explosivearrow.max',
+                'Piercing Attack': 'pierce.max',
+                'Aura': 'aura.parm',
+                'Aura Lvl': 'aura.max',
+                'hit-skill': 'hit-skill.parm',
+                'hit-skill rate': 'hit-skill.max',
+                'AR.min': 'res-all.min',
+                'AR.max': 'res-all.max',
+            }
+        },
+        {
+            'enable': True,
+            'export_name': 'Hit Skills Items',
+            'check_conditions': {
+                'logic': 'AND',
+                'conditions': [
+                    {"path": "hit-skill.max", "operator": ">", "threshold": 0},      # 光环  
+                ]
+            },
+
+            'export_mapping': {
+                'Name': 'Name',
+                'isOriginal': 'isOriginal',
+                'Source': 'source',
+                'MainType': 'MainType',
+                'Type': 'Type',
+                'BaseItem': 'BaseItem',
+                'Lvl.Req': 'Lvl.Req',
+                'hit-skill': 'hit-skill.parm',
+                'hit-skill rate': 'hit-skill.max',
+                'AllSkills': 'allskills.max',
+                'Amazon Skill': 'ama.max',
+                'Amazon Skill': 'skilltab.parm',
+                'Bow or Passive Skill': 'skilltab.max',
+                'Explosive Arrow': 'explosivearrow.max',
+                'Piercing Attack': 'pierce.max',
+                'Aura': 'aura.parm',
+                'Aura Lvl': 'aura.max',
+                'oskill': 'oskill.parm',
+                'oskill Level': 'oskill.max',
+                'AR.min': 'res-all.min',
+                'AR.max': 'res-all.max',
+            }
+        },
+        {
+            'enable': True,
+            'export_name': 'Aura Items',
+            'check_conditions': {
+                'logic': 'AND',
+                'conditions': [
+                    {"path": "aura.max", "operator": ">", "threshold": 0},      # 光环  
+                ]
+            },
+
+            'export_mapping': {
+                'Name': 'Name',
+                'isOriginal': 'isOriginal',
+                'Source': 'source',
+                'MainType': 'MainType',
+                'Type': 'Type',
+                'BaseItem': 'BaseItem',
+                'Lvl.Req': 'Lvl.Req',
+                'Aura': 'aura.parm',
+                'Aura Lvl': 'aura.max',
+                'AllSkills': 'allskills.max',
+                'Amazon Skill': 'ama.max',
+                'Amazon Skill': 'skilltab.parm',
+                'Bow or Passive Skill': 'skilltab.max',
+                'Explosive Arrow': 'explosivearrow.max',
+                'Piercing Attack': 'pierce.max',
+                'oskill': 'oskill.parm',
+                'oskill Level': 'oskill.max',
+                'hit-skill': 'hit-skill.parm',
+                'hit-skill rate': 'hit-skill.max',
+                'AR.min': 'res-all.min',
+                'AR.max': 'res-all.max',
+            }
+        },
+        {
+            'enable': False,
+            'export_name': 'Rings & Amulets with Skills',
+            'check_conditions': {
+                'logic': 'AND',
+                'conditions': [
+                    {"path": "Type", "operator": "in", "threshold": ['Ring', 'Amulet']},
+                    {
+                        'logic': 'OR',
+                        'conditions': [
+                            {"path": "allskills.max", "operator": ">=", "threshold": 1},
+                            {"path": "coldskill.max", "operator": ">=", "threshold": 1},
+                            {"path": "sor.max", "operator": ">=", "threshold": 1},
+                        ]
+                    },
+
                 ]
             },
 
@@ -429,8 +598,51 @@ class ItemFinder(BaseJob):
                 'Lvl.Req': 'Lvl.Req',
                 'location': 'BodyLoc1',
                 'hit-skill': 'hit-skill.parm',
-                'IAS': 'swing1.max',
-                'IAS': 'swing1.max',
+                'Faster Cast Rate1': 'cast1.max',
+                'Faster Cast Rate2': 'cast2.max',
+                'Faster Cast Rate3': 'cast3.max',
+                'AllSkills': 'allskills.max',
+                'Cold Skill': 'coldskill.max',
+                'Sorceress Skill': 'sor.max',
+                'oskill': 'oskill.parm',
+                'AR.min': 'res-all.min',
+                'AR.max': 'res-all.max',
+            }
+        },
+        {
+            'enable': False,
+            'export_name': 'Gloves IAS & skill',
+            'check_conditions': {
+                'logic': 'AND',
+                'conditions': [
+                    {"path": "Type", "operator": "==", "threshold": 'Gloves'},
+                    # {"path": ["swing1.max","swing2.max","swing3.max"], "operator": ">", "threshold": 0},
+                    {
+                        'logic': 'OR',
+                        'conditions': [
+                            # {"path": "res-all.min", "operator": ">", "threshold": 10},
+                            {"path": "oskill.parm", "operator": "notnull"},
+                            {"path": "hit-skill.parm", "operator": "notnull"},
+                        ]
+                    },
+
+                ]
+            },
+
+            'export_mapping': {
+                'Name': 'Name',
+                'isOriginal': 'isOriginal',
+                'Source': 'source',
+                'MainType': 'MainType',
+                'Type': 'Type',
+                'BaseItem': 'BaseItem',
+                'Lvl.Req': 'Lvl.Req',
+                'location': 'BodyLoc1',
+                'hit-skill': 'hit-skill.parm',
+                'IAS1': 'swing1.max',
+                'IAS2': 'swing2.max',
+                'IAS3': 'swing3.max',
+                'oskill': 'oskill.parm',
                 'AR.min': 'res-all.min',
                 'AR.max': 'res-all.max',
             }
@@ -590,19 +802,19 @@ class ItemFinder(BaseJob):
         items_df = pd.read_excel(item_detail_file_path, index_col=False)
         
         for config in self.config_list:
-            try:
-                if config['enable'] == False:
-                    continue
-                export_name = config['export_name']
-                check_conditions = config['check_conditions']
-                self.logger.info('Checking conditions: %s'%export_name)
+            # try:
+            if config['enable'] == False:
+                continue
+            export_name = config['export_name']
+            check_conditions = config['check_conditions']
+            self.logger.info('Checking conditions: %s'%export_name)
 
-                items_found = self.find_item_matches(items_df, check_conditions)
-                items_found.to_excel(os.path.join(self.debug_path, f'items_found.xlsx'), index=False)
-                self.export_to_excel(items_found, config['export_mapping'], output_file=os.path.join(self.work_path, f'{export_name}.xlsx'))
-            except Exception as e:
-                # 处理主逻辑异常
-                self.logger.error(f"错误: 应用条件时发生异常 - {str(e)}")
+            items_found = self.find_item_matches(items_df, check_conditions)
+            items_found.to_excel(os.path.join(self.debug_path, f'items_found.xlsx'), index=False)
+            self.export_to_excel(items_found, config['export_mapping'], output_file=os.path.join(self.work_path, f'{export_name}.xlsx'))
+            # except Exception as e:
+            #     # 处理主逻辑异常
+            #     self.logger.error(f"错误: 应用条件时发生异常 - {str(e)}")
 
 
     def export_to_excel(self, dataframe, export_mapping, output_file='output.xlsx'):
@@ -660,7 +872,9 @@ class ItemFinder(BaseJob):
         def apply_condition(df, condition):
             paths = condition["path"]
             op = condition["operator"]
-            threshold = condition["threshold"]
+            if "threshold" in condition:
+                threshold = condition["threshold"]
+            # threshold = condition["threshold"]
 
             # 初始化结果掩码
             result_mask = pd.Series([False] * len(df))
@@ -671,6 +885,17 @@ class ItemFinder(BaseJob):
             for path in paths:
                 if path not in df.columns:
                     raise ValueError(f"列不存在: {path}")
+                
+                # 特殊处理：判断空值（NaN）
+                if op == "isnull":
+                    result_mask |= df[path].isna()
+                    continue  # 跳过后续逻辑
+                elif op == "notnull":
+                    result_mask |= df[path].notna()
+                    continue  # 跳过后续逻辑
+                elif op == "in":
+                    result_mask |= df[path].isin(threshold)
+                    continue
                 
                 series = df[path]
             
