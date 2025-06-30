@@ -20,19 +20,19 @@ class LanguageModify(BaseJob):
         'item-names':[
             {
                 'filter': r'\[[XE]\]',
-                'form': 'enUS',
+                'from': 'enUS',
                 'to': 'zhTW',
                 'type': ModifyType.Default,
             },
             {
                 'filter': r'Stack:',
-                'form': 'enUS',
+                'from': 'enUS',
                 'to': 'zhTW',
                 'type': ModifyType.Replace,
             },
             {
                 'filter': r'Orb of',
-                'form': 'enUS',
+                'from': 'enUS',
                 'to': 'zhTW',
                 'type': ModifyType.Replace,
             },
@@ -40,7 +40,17 @@ class LanguageModify(BaseJob):
         'item-runes':[
             {
                 'name': 'item-runes.json',
-                'form': 'enUS',
+                'from': 'enUS',
+                'to': 'zhTW',
+                'type': ModifyType.Default,
+            },
+        ],
+        'skills':[
+            {
+                'name': 'skills.json',
+                'filter': 'skillname|skillan',
+                'filter-key': 'Key',
+                'from': 'enUS',
                 'to': 'zhTW',
                 'type': ModifyType.Default,
             },
@@ -106,17 +116,21 @@ class LanguageModify(BaseJob):
     def _modify_lang_content(self, content, setting):
         for single_content in content:
             if 'filter' in setting:
-                if not re.search(setting['filter'], single_content[setting['form']]):
+                if 'filter-key' in setting:
+                    filter_key = setting['filter-key']
+                else:
+                    filter_key = setting['from']
+                if not re.search(setting['filter'], single_content[filter_key]):
                     continue
 
             modify_type = setting.get('type', ModifyType.Default)
             if ModifyType.Replace in modify_type:
-                single_content[setting['to']] = single_content[setting['form']]
+                single_content[setting['to']] = single_content[setting['from']]
             else:
                 if ModifyType.NewLine in modify_type:
-                    single_content[setting['to']] = single_content[setting['to']] + "\n"+ single_content[setting['form']]
+                    single_content[setting['to']] = single_content[setting['to']] + "\n"+ single_content[setting['from']]
                 else:
-                    single_content[setting['to']] = single_content[setting['to']] + " " + single_content[setting['form']]
+                    single_content[setting['to']] = single_content[setting['to']] + " " + single_content[setting['from']]
 
         return content
 
