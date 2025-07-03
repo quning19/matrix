@@ -1,0 +1,54 @@
+{
+    "enable": true,
+    "export_name": "All Bows",
+    "check_conditions": {
+        "logic": "AND",
+        "conditions": [
+            {
+                "path": "Type",
+                "operator": "in",
+                "threshold": ["Bow", "Amazon Bow", "Crossbow", "Missile Weapon", "Weapon"]
+            },
+            {
+                "logic": "OR",
+                "conditions": [
+                    {
+                        "path": "Lvl.Req",
+                        "operator": ">",
+                        "threshold": 30
+                    }
+                ]
+            }
+        ]
+    },
+    "export_mapping": {
+        "Name": "Name",
+        "isOriginal": "isOriginal",
+        "Source": "source",
+        "MainType": "MainType",
+        "Type": "Type",
+        "BaseItem": "BaseItem",
+        "Lvl.Req": "Lvl.Req",
+        "Attack Speed": ["swing1.max", "swing2.max", "swing3.max"],
+        "ed.min": "dmg%.min",
+        "ed.max": "dmg%.max",
+        "dmg-min.min": "dmg-min.min",
+        "dmg-min.max": "dmg-min.max",
+        "dmg-max.min": "dmg-max.min",
+        "dmg-max.max": "dmg-max.max",
+        "dmg-max/lvl(/8)": "dmg/lvl.parm",
+        "dmg%-max/lvl(/8)": "dmg%/lvl.parm",
+        "dmg-norm.min": "dmg-norm.min",
+        "dmg-norm.max": "dmg-norm.max",
+        "AllSkills": "allskills.max",
+        "Amazon Skill": "ama.max",
+        "Amazon Skill Tab": "skilltab.parm",
+        "Bow or Passive Skill": "skilltab.max",
+        "Aura": "aura.parm",
+        "Aura Lvl": "aura.max",
+        "oskill": "oskill.parm",
+        "oskill Level": "oskill.max",
+        "hit-skill": "hit-skill.parm",
+        "hit-skill rate": "hit-skill.max"
+    }
+}

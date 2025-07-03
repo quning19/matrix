@@ -1,0 +1,52 @@
+{
+	"enable": false,
+	"export_name": "Rings & Amulets with Skills",
+	"check_conditions": {
+		"logic": "AND",
+		"conditions": [
+			{
+				"path": "Type",
+				"operator": "in",
+				"threshold": ["Ring", "Amulet"]
+			},
+			{
+				"logic": "OR",
+				"conditions": [
+					{
+						"path": "allskills.max",
+						"operator": ">=",
+						"threshold": 1
+					},
+					{
+						"path": "coldskill.max",
+						"operator": ">=",
+						"threshold": 1
+					},
+					{
+						"path": "sor.max",
+						"operator": ">=",
+						"threshold": 1
+					}
+				]
+			}
+		]
+	},
+	"export_mapping": {
+		"Name": "Name",
+		"isOriginal": "isOriginal",
+		"Source": "source",
+		"MainType": "MainType",
+		"Type": "Type",
+		"BaseItem": "BaseItem",
+		"Lvl.Req": "Lvl.Req",
+		"location": "BodyLoc1",
+		"hit-skill": "hit-skill.parm",
+		"Faster Cast Rate": ["cast1.max", "cast2.max", "cast3.max"],
+		"AllSkills": "allskills.max",
+		"Cold Skill": "coldskill.max",
+		"Sorceress Skill": "sor.max",
+		"oskill": "oskill.parm",
+		"AR.min": "res-all.min",
+		"AR.max": "res-all.max"
+	}
+}

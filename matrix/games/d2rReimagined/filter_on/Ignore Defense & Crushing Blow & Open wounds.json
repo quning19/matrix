@@ -1,0 +1,52 @@
+{
+    "check_conditions": {
+        "logic": "OR",
+        "conditions": [
+            {
+                "path": "ignore-ac.max",
+                "operator": "notnull"
+            },
+            {
+                "path": "openwounds.max",
+                "operator": "notnull"
+            },
+            {
+                "path": "wounds/lvl.parm",
+                "operator": "notnull"
+            },
+            {
+                "path": "crush.max",
+                "operator": "notnull"
+            },
+            {
+                "path": "crush/lvl.parm",
+                "operator": "notnull"
+            }
+        ]
+    },
+    "export_mapping": {
+        "Name": "Name",
+        "isOriginal": "isOriginal",
+        "Source": "source",
+        "MainType": "MainType",
+        "Type": "Type",
+        "BaseItem": "BaseItem",
+        "Lvl.Req": "Lvl.Req",
+        "location": "BodyLoc1",
+        "Attack Speed": ["swing1.max", "swing2.max", "swing3.max"],
+        "Crushing": "crush.max",
+        "Crushing/lvl": "crush/lvl.parm",
+        "OpenWounds": "openwounds.max",
+        "OpenWounds/lvl": "wounds/lvl.parm",
+        "AllSkills": "allskills.max",
+        "Amazon Skill": "ama.max",
+        "Amazon Skill Tab": "skilltab.parm",
+        "Bow or Passive Skill": "skilltab.max",
+        "Aura": "aura.parm",
+        "Aura Lvl": "aura.max",
+        "oskill": "oskill.parm",
+        "oskill Level": "oskill.max",
+        "hit-skill": "hit-skill.parm",
+        "hit-skill rate": "hit-skill.max"
+    }
+}
