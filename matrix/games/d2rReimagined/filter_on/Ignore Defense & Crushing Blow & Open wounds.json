@@ -7,20 +7,14 @@
                 "operator": "notnull"
             },
             {
-                "path": "openwounds.max",
-                "operator": "notnull"
+                "path": "openwounds",
+                "operator": ">",
+                "threshold": 0
             },
             {
-                "path": "wounds/lvl.parm",
-                "operator": "notnull"
-            },
-            {
-                "path": "crush.max",
-                "operator": "notnull"
-            },
-            {
-                "path": "crush/lvl.parm",
-                "operator": "notnull"
+                "path": "crush",
+                "operator": ">",
+                "threshold": 0
             }
         ]
     },
@@ -33,11 +27,11 @@
         "BaseItem": "BaseItem",
         "Lvl.Req": "Lvl.Req",
         "location": "BodyLoc1",
-        "Attack Speed": ["swing1.max", "swing2.max", "swing3.max"],
-        "Crushing": "crush.max",
-        "Crushing/lvl": "crush/lvl.parm",
-        "OpenWounds": "openwounds.max",
-        "OpenWounds/lvl": "wounds/lvl.parm",
+        "Ignore Defense": "ignore-ac.max",
+        "Attack Speed": "swing",
+        "Crushing": "crush",
+        "OpenWounds": "openwounds",
+        "No Frozen": "nofreeze.max",
         "AllSkills": "allskills.max",
         "Amazon Skill": "ama.max",
         "Amazon Skill Tab": "skilltab.parm",

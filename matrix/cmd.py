@@ -91,7 +91,7 @@ def run_d2r_item_finder(**options):
 @click.command()
 def run_d2r_item_details(**options):
     """item finder"""
-    from matrix.games.d2rReimagined.ItemFinder import ItemDetailsGenerator
+    from matrix.games.d2rReimagined.ItemDetailsGenerator import ItemDetailsGenerator
     job = ItemDetailsGenerator(options)
     job.run()
 
