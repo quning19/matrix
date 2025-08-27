@@ -21,6 +21,7 @@ class TexasRules():
 
     def __init__(self):
         self.cards = Cards()
+        self.init_rules()
 
     def init_rules(self):
         self.rules = {}
@@ -39,7 +40,7 @@ class TexasRules():
         for match_type in reversed(list(TexasMatch)):  # 从 STRAIGHT_FLUSH 到 HIGH_CARD
             match, rank_idxs = self.rules[match_type](cards)
             if match:
-                print(match, rank_idxs)
+                # print(match, rank_idxs)
                 return match_type, rank_idxs
 
     def check_high_card(self, cards, len = 5):
@@ -48,7 +49,7 @@ class TexasRules():
     
     def check_one_pair(self, cards):
 
-        counts = Counter([card.rank_idx for card in cards])
+        counts = Counter(card.rank_idx for card in cards)
         pairs = [k for k, v in counts.items() if v == 2]
 
         if len(pairs) == 0:
@@ -61,7 +62,7 @@ class TexasRules():
         return True, pair_cards + left
     
     def check_two_pairs(self, cards):
-        counts = Counter([card.rank_idx for card in cards])
+        counts = Counter(card.rank_idx for card in cards)
         pairs = [k for k, v in counts.items() if v == 2]
 
         if len(pairs) < 2:
@@ -75,7 +76,7 @@ class TexasRules():
         return True, pair_cards_1 + pair_cards_2 + left
     
     def check_three_of_a_kind(self, cards):
-        counts = Counter([card.rank_idx for card in cards])
+        counts = Counter(card.rank_idx for card in cards)
         trips = [k for k, v in counts.items() if v == 3]
 
         if len(trips) < 1:
@@ -88,11 +89,11 @@ class TexasRules():
         return True, trip_cards + left
     
     def check_straight(self, cards):
-        counts = Counter([card.rank_idx for card in cards])
+        counts = Counter(card.rank_idx for card in cards)
         counts[-1] = counts[12]
         straight_top = None
 
-        for i in range(12, 0, -1):
+        for i in range(12, 3, -1):
             if counts[i] >= 1 and counts[i-1] >= 1 and counts[i-2] >= 1 and counts[i-3] >= 1 and counts[i-4] >= 1:
                 straight_top = i
                 break
@@ -109,7 +110,7 @@ class TexasRules():
         return True, straights
     
     def check_flush(self, cards):
-        counts = Counter([card.suit_idx for card in cards])
+        counts = Counter(card.suit_idx for card in cards)
         flush = [k for k, v in counts.items() if v >= 5]
         if len(flush) < 1:
             return False, []
@@ -119,7 +120,7 @@ class TexasRules():
         return True, flush_cards[0:5]
     
     def check_full_house(self, cards):
-        counts = Counter([card.rank_idx for card in cards])
+        counts = Counter(card.rank_idx for card in cards)
         trips = [k for k, v in counts.items() if v == 3]
 
         if len(trips) < 1:
@@ -128,7 +129,7 @@ class TexasRules():
         trips.sort(reverse=True)
         trip_cards, left = self.split_match_rank_idx(cards, trips[0])
 
-        counts = Counter([card.rank_idx for card in left])
+        counts = Counter(card.rank_idx for card in left)
         pairs = [k for k, v in counts.items() if v >= 2]
 
         if len(pairs) == 0:
@@ -140,7 +141,7 @@ class TexasRules():
         return True, trip_cards + pair_cards
     
     def check_four_of_a_kind(self, cards):
-        counts = Counter([card.rank_idx for card in cards])
+        counts = Counter(card.rank_idx for card in cards)
         quads = [k for k, v in counts.items() if v == 4]
 
         if len(quads) < 1:
@@ -153,7 +154,7 @@ class TexasRules():
         return True, quads_cards + left
     
     def check_straight_flush(self, cards):
-        counts = Counter([card.suit_idx for card in cards])
+        counts = Counter(card.suit_idx for card in cards)
         flush = [k for k, v in counts.items() if v >= 5]
         if len(flush) < 1:
             return False, []

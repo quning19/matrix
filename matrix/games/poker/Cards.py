@@ -23,7 +23,7 @@ class Card():
     @staticmethod
     def get_card_rank_char(idx):
         rank = Card.get_card_rank_idx(idx)
-        return ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'][rank]
+        return ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'][rank]
     
     @staticmethod
     def get_card_suit_char(idx):
@@ -31,7 +31,7 @@ class Card():
         return ['S', 'H', 'C', 'D'][suit]
     @staticmethod
     def get_rank_idx_by_char(char):
-        return ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'].index(char)    
+        return ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'].index(char)    
     @staticmethod
     def get_suit_idx_by_char(char):
         return ['S', 'H', 'C', 'D'].index(char)
@@ -51,6 +51,11 @@ class Cards():
     def reset(self):
         self.cards = [Card.from_idx(i) for i in range(0, 52)]
 
+    def deal_card(self, rank, suit):
+        for card in self.cards:
+            if card.rank_char == rank and card.suit_char == suit:
+                self.cards.remove(card)
+                return card
     def deal_random_card(self):
         return self.cards.pop(random.randint(0, len(self.cards) - 1))
     
