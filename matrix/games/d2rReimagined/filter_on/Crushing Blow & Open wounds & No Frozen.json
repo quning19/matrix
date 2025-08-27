@@ -3,7 +3,7 @@
         "logic": "OR",
         "conditions": [
             {
-                "path": "ignore-ac.max",
+                "path": "nofreeze.max",
                 "operator": "notnull"
             },
             {
@@ -27,7 +27,6 @@
         "BaseItem": "BaseItem",
         "Lvl.Req": "Lvl.Req",
         "location": "BodyLoc1",
-        "Ignore Defense": "ignore-ac.max",
         "Attack Speed": "swing",
         "Crushing": "crush",
         "OpenWounds": "openwounds",
