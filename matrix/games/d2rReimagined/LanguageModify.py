@@ -25,16 +25,34 @@ class LanguageModify(BaseJob):
                 'type': ModifyType.Default,
             },
             {
+                'filter': r'\[[XE]\]',
+                'from': 'enUS',
+                'to': 'zhCN',
+                'type': ModifyType.Default,
+            },
+            {
                 'filter': r'Stack:',
                 'from': 'enUS',
                 'to': 'zhTW',
-                'type': ModifyType.Replace,
+                'type': ModifyType.NewLine,
+            },
+            {
+                'filter': r'Stack:',
+                'from': 'enUS',
+                'to': 'zhCN',
+                'type': ModifyType.NewLine,
             },
             {
                 'filter': r'Orb of',
                 'from': 'enUS',
                 'to': 'zhTW',
-                'type': ModifyType.Replace,
+                'type': ModifyType.NewLine,
+            },
+            {
+                'filter': r'Orb of',
+                'from': 'enUS',
+                'to': 'zhCN',
+                'type': ModifyType.NewLine,
             },
         ],
         'item-runes':[
@@ -42,6 +60,12 @@ class LanguageModify(BaseJob):
                 'name': 'item-runes.json',
                 'from': 'enUS',
                 'to': 'zhTW',
+                'type': ModifyType.Default,
+            },
+            {
+                'name': 'item-runes.json',
+                'from': 'enUS',
+                'to': 'zhCN',
                 'type': ModifyType.Default,
             },
         ],
@@ -96,7 +120,7 @@ class LanguageModify(BaseJob):
 
         try:
             # 读取JSON文件
-            with open(input_file_path, 'r', encoding='utf-8') as f:
+            with open(input_file_path, 'r', encoding='utf-8-sig') as f:
                 data = json.load(f)
             
             # 应用修改函数
@@ -104,7 +128,7 @@ class LanguageModify(BaseJob):
                 modified_data = self._modify_lang_content(data, setting)
             
             # 保存为新的JSON文件
-            with open(output_file_path, 'w', encoding='utf-8') as f:
+            with open(output_file_path, 'w', encoding='utf-8-sig') as f:
                 json.dump(modified_data, f, ensure_ascii=False, indent=4)
 
             return True
