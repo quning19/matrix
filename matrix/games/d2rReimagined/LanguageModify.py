@@ -19,39 +19,39 @@ class LanguageModify(BaseJob):
     language_setting = {
         'item-names':[
             {
-                'filter': r'\[[XE]\]',
+                'filter': r'[HM]P[0-9]',
                 'from': 'enUS',
-                'to': 'zhTW',
-                'type': ModifyType.Default,
+                'to': ['zhCN', 'zhTW'],
+                'type': ModifyType.Replace,
+            },
+            {
+                'filter': r'35%',
+                'from': 'enUS',
+                'to': ['zhCN', 'zhTW'],
+                'type': ModifyType.Replace,
+            },
+            {
+                'filter': r'Full$',
+                'from': 'enUS',
+                'to': ['zhCN', 'zhTW'],
+                'type': ModifyType.Replace,
             },
             {
                 'filter': r'\[[XE]\]',
                 'from': 'enUS',
-                'to': 'zhCN',
+                'to': ['zhCN', 'zhTW'],
                 'type': ModifyType.Default,
             },
             {
                 'filter': r'Stack:',
                 'from': 'enUS',
-                'to': 'zhTW',
-                'type': ModifyType.NewLine,
-            },
-            {
-                'filter': r'Stack:',
-                'from': 'enUS',
-                'to': 'zhCN',
+                'to': ['zhCN', 'zhTW'],
                 'type': ModifyType.NewLine,
             },
             {
                 'filter': r'Orb of',
                 'from': 'enUS',
-                'to': 'zhTW',
-                'type': ModifyType.NewLine,
-            },
-            {
-                'filter': r'Orb of',
-                'from': 'enUS',
-                'to': 'zhCN',
+                'to': ['zhCN', 'zhTW'],
                 'type': ModifyType.NewLine,
             },
         ],
@@ -148,13 +148,17 @@ class LanguageModify(BaseJob):
                     continue
 
             modify_type = setting.get('type', ModifyType.Default)
-            if ModifyType.Replace in modify_type:
-                single_content[setting['to']] = single_content[setting['from']]
-            else:
-                if ModifyType.NewLine in modify_type:
-                    single_content[setting['to']] = single_content[setting['to']] + "\n"+ single_content[setting['from']]
+            target_keys = setting['to']
+            if isinstance(target_keys, str):
+                target_keys = [target_keys]
+
+            for target_key in target_keys:
+                if ModifyType.Replace in modify_type:
+                    single_content[target_key] = single_content[setting['from']]
+                elif ModifyType.NewLine in modify_type:
+                        single_content[target_key] = single_content[target_key] + "\n"+ single_content[setting['from']]
                 else:
-                    single_content[setting['to']] = single_content[setting['to']] + " " + single_content[setting['from']]
+                    single_content[target_key] = single_content[target_key] + " " + single_content[setting['from']]
 
         return content
 
