@@ -42,12 +42,12 @@ class LanguageModify(BaseJob):
                 'to': ['zhCN', 'zhTW'],
                 'type': ModifyType.Default,
             },
-            {
-                'filter': r'Stack:',
-                'from': 'enUS',
-                'to': ['zhCN', 'zhTW'],
-                'type': ModifyType.NewLine,
-            },
+            # {
+            #     'filter': r'Stack:',
+            #     'from': 'enUS',
+            #     'to': ['zhCN', 'zhTW'],
+            #     'type': ModifyType.NewLine,
+            # },
             {
                 'filter': r'Orb of',
                 'from': 'enUS',
@@ -97,6 +97,8 @@ class LanguageModify(BaseJob):
             os.mkdir(input_path)
 
             for file_name in all_files:
+                if not file_name.endswith('.json'):
+                    continue
                 source_file = os.path.join(work_path, file_name)
                 target_file = os.path.join(input_path, file_name)
                 shutil.copy(source_file, target_file)
