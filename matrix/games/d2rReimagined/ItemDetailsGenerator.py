@@ -48,6 +48,8 @@ class ItemDetailsGenerator(BaseJob):
         },
     ]
 
+    priority_columns = ['Index', 'Name', 'BaseItem', 'Type', 'TypeShort', 'MainType', 'code', 'Lvl.Req', 'isOriginal', 'source']
+
     file_and_field_list = [
         {
             'file_name': 'uniqueitems.txt',
@@ -180,8 +182,25 @@ class ItemDetailsGenerator(BaseJob):
         
         output_file = os.path.join(self.work_path, 'ItemDetails.xlsx')
         self.logger.info(f"数据导出到 {output_file}")
+        items_df = self.change_priority_columns(items_df, self.priority_columns)
         items_df.to_excel(output_file, index=False)
         self.logger.info("导出完成")
+
+    def change_priority_columns(self, df, priority_columns):
+        all_columns = df.columns.tolist()
+
+        existing_priority_cols = [col for col in priority_columns if col in all_columns]
+        missing_cols = [col for col in priority_columns if col not in all_columns]
+        if missing_cols:
+            self.logger.info(f"提示：以下列在CSV中不存在，已自动忽略：{missing_cols}")
+
+        remaining_cols = [col for col in all_columns if col not in existing_priority_cols]
+
+        new_column_order = existing_priority_cols + remaining_cols
+        df = df[new_column_order]
+
+        return df
+
 
     def modify_rune_item_df(self, items_df, file_and_field):
         items_df = self.map_typeshort_to_type(        
@@ -192,14 +211,14 @@ class ItemDetailsGenerator(BaseJob):
         items_df['code'] = 'None'
 
         completed_file_path = os.path.join(self.original_path, 'runes_completed.txt')
-        if not os.path.exists(completed_file_path):
-            self.logger.error(f'File not found: {completed_file_path}')
+        if os.path.exists(completed_file_path):
+            # 读取CSV文件并转换
+            completed_items_df = self.read_csv_file(completed_file_path, file_and_field['fields'])
+
+            items_df['isOriginal'] = items_df['Name'].isin(completed_items_df['Name']).map({True: 'True', False: ''})
+        else:
+            self.logger.info(f'[Skip original RW check]File not found: {completed_file_path}')
             return items_df
-
-        # 读取CSV文件并转换
-        completed_items_df = self.read_csv_file(completed_file_path, file_and_field['fields'])
-
-        items_df['isOriginal'] = items_df['Name'].isin(completed_items_df['Name']).map({True: 'True', False: ''})
 
         # 根据rune处理等级需求
         rune_columns = [col for col in items_df.columns if col.startswith('Rune')]

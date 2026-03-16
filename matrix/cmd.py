@@ -90,7 +90,7 @@ def run_d2r_item_finder(**options):
 @click.option('-w', '--work-path', required=True, help='工作路径')
 @click.command()
 def run_d2r_item_details(**options):
-    """item finder"""
+    """item details"""
     from matrix.games.d2rReimagined.ItemDetailsGenerator import ItemDetailsGenerator
     job = ItemDetailsGenerator(options)
     job.run()
