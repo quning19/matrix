@@ -9,80 +9,88 @@ from matrix.base.BaseJob import BaseJob
 from matrix.utils import get_all_file_list
 
 class ModifyType(Flag):
-    Default = auto()
-    Replace = auto()
-    NewLine = auto()
+    Default = auto()        # 默认行为，直接在目标语言后面追加原文
+    Replace = auto()        # 替换目标语言的内容为原文
+    NewLine = auto()        # 在目标语言后面添加换行符,后面追加原文
+    Func = auto()           # 函数调用
 
 
 class LanguageModify(BaseJob):
 
-    language_setting = {
-        'item-names':[
-            {
-                'filter': r'[HM]P[0-9]',
-                'from': 'enUS',
-                'to': ['zhCN', 'zhTW'],
-                'type': ModifyType.Replace,
-            },
-            {
-                'filter': r'35%',
-                'from': 'enUS',
-                'to': ['zhCN', 'zhTW'],
-                'type': ModifyType.Replace,
-            },
-            {
-                'filter': r'Full$',
-                'from': 'enUS',
-                'to': ['zhCN', 'zhTW'],
-                'type': ModifyType.Replace,
-            },
-            {
-                'filter': r'\[[XE]\]',
-                'from': 'enUS',
-                'to': ['zhCN', 'zhTW'],
-                'type': ModifyType.Default,
-            },
-            # {
-            #     'filter': r'Stack:',
-            #     'from': 'enUS',
-            #     'to': ['zhCN', 'zhTW'],
-            #     'type': ModifyType.NewLine,
-            # },
-            {
-                'filter': r'Orb of',
-                'from': 'enUS',
-                'to': ['zhCN', 'zhTW'],
-                'type': ModifyType.NewLine,
-            },
-        ],
-        'item-runes':[
-            {
-                'name': 'item-runes.json',
-                'from': 'enUS',
-                'to': 'zhTW',
-                'type': ModifyType.Default,
-            },
-            {
-                'name': 'item-runes.json',
-                'from': 'enUS',
-                'to': 'zhCN',
-                'type': ModifyType.Default,
-            },
-        ],
-        'skills':[
-            {
-                'name': 'skills.json',
-                'filter': 'skillname|skillan',
-                'filter-key': 'Key',
-                'from': 'enUS',
-                'to': 'zhTW',
-                'type': ModifyType.Default,
-            },
-        ],
-    }
+    language_setting = {}
+    
+
 
     def __init__(self, options):
         BaseJob.__init__(self, options)
+        self.language_setting = {    
+            'item-names':[
+                {
+                    'filter': r'[HM]P[0-9]',
+                    'from': 'enUS',
+                    'to': ['zhCN', 'zhTW'],
+                    'type': ModifyType.Replace,
+                },
+                {
+                    'filter': r'35%',
+                    'from': 'enUS',
+                    'to': ['zhCN', 'zhTW'],
+                    'type': ModifyType.Replace,
+                },
+                {
+                    'filter': r'Full$',
+                    'from': 'enUS',
+                    'to': ['zhCN', 'zhTW'],
+                    'type': ModifyType.Replace,
+                },
+                {
+                    'filter': r'\[[XE]\]',
+                    'from': 'enUS',
+                    'to': ['zhCN', 'zhTW'],
+                    'type': ModifyType.Default,
+                },
+                # {
+                #     'filter': r'Stack:',
+                #     'from': 'enUS',
+                #     'to': ['zhCN', 'zhTW'],
+                #     'type': ModifyType.NewLine,
+                # },
+                {
+                    'filter': r'Orb of',
+                    'from': 'enUS',
+                    'to': ['zhCN', 'zhTW'],
+                    'type': ModifyType.NewLine,
+                },
+            ],
+            'item-runes':[
+                {
+                    'name': 'item-runes.json',
+                    'from': 'enUS',
+                    'to': ['zhCN', 'zhTW'],
+                    'type': ModifyType.Default,
+                },
+            ],
+            'skills':[
+                {
+                    'name': 'skills.json',
+                    'filter': 'skillname|skillan',
+                    'filter-key': 'Key',
+                    'from': 'enUS',
+                    'to': ['zhCN', 'zhTW'],
+                    'type': ModifyType.Default,
+                },
+            ],
+            'ui':[
+                {
+                    'name': 'ui.json',
+                    'filter': 'HeraldName',
+                    'filter-key': 'Key',
+                    'to': ['zhCN', 'zhTW'],
+                    'type': ModifyType.Func,
+                    'func': self._modify_herald,
+                },
+            ]
+        }
 
     def run(self):
         self.logger.info('start')
@@ -155,7 +163,10 @@ class LanguageModify(BaseJob):
                 target_keys = [target_keys]
 
             for target_key in target_keys:
-                if ModifyType.Replace in modify_type:
+                if ModifyType.Func in modify_type and 'func' in setting:
+                    func = setting['func']
+                    single_content[target_key] = func(single_content, target_key, setting)
+                elif ModifyType.Replace in modify_type:
                     single_content[target_key] = single_content[setting['from']]
                 elif ModifyType.NewLine in modify_type:
                         single_content[target_key] = single_content[target_key] + "\n"+ single_content[setting['from']]
@@ -163,4 +174,7 @@ class LanguageModify(BaseJob):
                     single_content[target_key] = single_content[target_key] + " " + single_content[setting['from']]
 
         return content
+    
+    def _modify_herald(self, content, target_key, setting):
+        return content[target_key] + " " + content['Key'][-1]
 

@@ -28,7 +28,7 @@ class ItemFinder(BaseJob):
         with open(yaml_path, 'r', encoding='utf-8') as f:
             self.d2r_config = yaml.load(f, yaml.FullLoader)
 
-        self.excel_path = os.path.join(self.d2r_config['mod_d2rr_root'], self.excel_relative_path)
+        self.excel_path = os.path.join(self.d2r_config['d2r_reimagined_mod_root'], self.excel_relative_path)
         self.work_path = self.get_options('work_path')
         self.debug_path = os.path.join(self.work_path, 'debug_export')
         if os.path.exists(self.debug_path):

@@ -1,2 +1,5 @@
 d2r_root: "D:\\BlizzardGames\\Diablo II Resurrected\\"
-mod_d2rr_root: "D:\\BlizzardGames\\Diablo II Resurrected\\mods\\Reimagined\\Reimagined.mpq\\"
+d2r_reimagined_mod_root: "D:\\BlizzardGames\\Diablo II Resurrected\\mods\\Reimagined\\Reimagined.mpq\\"
+
+d2rmm_root: "D:\\BlizzardGames\\D2R Reimagined Tools\\D2RMM 1.8.0\\"
+d2rmm_reimagined_mod_path: "D:\\BlizzardGames\\D2R Reimagined Tools\\D2RMM 1.8.0\\mods\\Reimagined\\"
