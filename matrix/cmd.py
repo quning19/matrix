@@ -95,10 +95,20 @@ def run_d2r_item_details(**options):
     job = ItemDetailsGenerator(options)
     job.run()
 
+@click.option('-m', '--d2rmm-format', is_flag=True, default=False, help='是否使用D2RMM格式')
+@click.option('--debug', is_flag=True, default=False, help='启用调试模式')
+@click.command()
+def run_d2r_mod_optimizer(**options):
+    """mod optimizer"""
+    from matrix.games.d2rReimagined.ModOptimizer import ModOptimizer
+    job = ModOptimizer(options)
+    job.run()
+
 main.add_command(run_dsp, name='dsp')
 main.add_command(run_d2r_language_modify, name='d2rl')
 main.add_command(run_d2r_item_finder, name='d2rf')
 main.add_command(run_d2r_item_details, name='d2rd')
+main.add_command(run_d2r_mod_optimizer, name='d2ro')
 
 
 if __name__ == '__main__':

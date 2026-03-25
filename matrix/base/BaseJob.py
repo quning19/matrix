@@ -30,7 +30,7 @@ class BaseJob:
     def get_config(self, key):
         return self.get_options(key) or utils.getProjectConfig(key) or utils.getMainConfig(key)
 
-    def get_options(self, key):
+    def get_options(self, key, default=None):
         if key in self._options:
             return self._options[key]
-        return None
+        return default

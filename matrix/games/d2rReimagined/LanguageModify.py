@@ -20,7 +20,6 @@ class LanguageModify(BaseJob):
     language_setting = {}
     
 
-
     def __init__(self, options):
         BaseJob.__init__(self, options)
         self.language_setting = {    
