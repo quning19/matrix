@@ -70,14 +70,6 @@ def run_dsp(**options):
     job = DSPSeedFind(options)
     job.run()
 
-@click.option('-p', '--work-path', required=True, help='json文件读取路径')
-@click.command()
-def run_d2r_language_modify(**options):
-    """Language Modify"""
-    from matrix.games.d2rReimagined.LanguageModify import LanguageModify
-    job = LanguageModify(options)
-    job.run()
-
 @click.option('-w', '--work-path', required=True, help='工作路径')
 @click.command()
 def run_d2r_item_finder(**options):
@@ -104,11 +96,19 @@ def run_d2r_mod_optimizer(**options):
     job = ModOptimizer(options)
     job.run()
 
+@click.option('-d', '--debug', is_flag=True, default=False, help='启用调试模式')
+@click.command()
+def run_d2r_reimagined(**options):
+    """D2R Reimagined Tools"""
+    from matrix.games.d2rReimagined.D2RReimaginedMenu import D2RReimaginedMenu
+    job = D2RReimaginedMenu(options)
+    job.run()
+
 main.add_command(run_dsp, name='dsp')
-main.add_command(run_d2r_language_modify, name='d2rl')
 main.add_command(run_d2r_item_finder, name='d2rf')
 main.add_command(run_d2r_item_details, name='d2rd')
 main.add_command(run_d2r_mod_optimizer, name='d2ro')
+main.add_command(run_d2r_reimagined, name='d2rr')
 
 
 if __name__ == '__main__':

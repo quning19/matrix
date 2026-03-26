@@ -7,11 +7,11 @@ import shutil
 import yaml
 import pandas as pd
 from matrix.games.d2rReimagined import *
+from matrix.games.d2rReimagined.D2rJob import D2rJob
 from openpyxl.styles import Font, Alignment
-from matrix.base.BaseJob import BaseJob
 
 
-class ItemFinder(BaseJob):
+class ItemFinder(D2rJob):
 
     excel_relative_path = 'data/global/excel/'
     excel_path = None
@@ -21,15 +21,10 @@ class ItemFinder(BaseJob):
     config_list = []
 
     def __init__(self, options):
-        BaseJob.__init__(self, options)
+        D2rJob.__init__(self, options)
 
-        yaml_path = os.path.join(os.path.dirname(__file__), 'D2rrConfig.yaml')
-
-        with open(yaml_path, 'r', encoding='utf-8') as f:
-            self.d2r_config = yaml.load(f, yaml.FullLoader)
-
-        self.excel_path = os.path.join(self.d2r_config['d2r_reimagined_mod_root'], self.excel_relative_path)
-        self.work_path = self.get_options('work_path')
+        self.excel_path = os.path.join(self.get_d2r_config('d2r_reimagined_mod_root'), self.excel_relative_path)
+        self.work_path = self.get_d2r_config('work_path')
         self.debug_path = os.path.join(self.work_path, 'debug_export')
         if os.path.exists(self.debug_path):
             shutil.rmtree(self.debug_path)

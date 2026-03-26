@@ -2,18 +2,13 @@
 
 import json
 import os
-import yaml
-from matrix.base.BaseJob import BaseJob
+from matrix.games.d2rReimagined.D2rJob import D2rJob
 from matrix.games.d2rReimagined.LanguageModify import LanguageModify
 
-class ModOptimizer(BaseJob):
+class ModOptimizer(D2rJob):
 
     def __init__(self, options):
-        BaseJob.__init__(self, options)
-        yaml_path = os.path.join(os.path.dirname(__file__), 'D2rrConfig.yaml')
-
-        with open(yaml_path, 'r', encoding='utf-8') as f:
-            self.d2r_config = yaml.load(f, yaml.FullLoader)
+        D2rJob.__init__(self, options)
 
     def run(self):
         self.logger.info('start')
