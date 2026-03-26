@@ -1,13 +1,35 @@
+# 工作空间根目录，包含所有D2R相关工具
 workspace: "D:\\BlizzardGames\\D2R Reimagined Tools"
 
+# Diablo II Resurrected 游戏根目录（独立路径）
 d2r_root: "D:\\BlizzardGames\\Diablo II Resurrected\\"
+
+# Reimagined Mod文件路径
 d2r_reimagined_mod_root: "$d2r_root\\mods\\Reimagined\\Reimagined.mpq\\"
 
+# D2RMM工具根目录
 d2rmm_root: "$workspace\\D2RMM 1.8.0\\"
+
+# D2RMM下的Reimagined Mod路径
 d2rmm_reimagined_mod_path: "$d2rmm_root\\mods\\Reimagined\\"
 
+# Beta Launcher工具根目录
 d2r_beta_launcher_root: "$workspace\\Reimagined Beta Launcher for Non-Steam\\"
+
+# Beta Launcher下的mods工具路径
 d2r_beta_launcher_mods_path: "$d2r_beta_launcher_root\\utils\\mods\\"
 
+# 输出文件工作目录
 work_path: "$workspace\\mods\\Reimagined\\output"
+
+# 原始Excel文件目录
 original_path: "$workspace\\mods\\Reimagined\\original_excel"
+
+# D2R Reimagined Excels工作目录
+excels_path: "$workspace\\D2R Reimagined Excels"
+
+# Vanilla数据目录
+vanilla_path: "$excels_path\\vanilla"
+
+# Casc解压工具路径
+casc_console_path: "$d2r_beta_launcher_root\\utils\\Casc\\CASCConsole.exe"

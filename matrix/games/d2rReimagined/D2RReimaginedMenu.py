@@ -13,6 +13,7 @@ class D2RReimaginedMenu(D2rJob):
             {'name': 'Mod Optimizer', 'cmd': 'd2ro', 'desc': 'Mod优化工具'},
             {'name': 'Item Finder', 'cmd': 'd2rf', 'desc': '物品查找器'},
             {'name': 'Item Details', 'cmd': 'd2rd', 'desc': '物品详情生成'},
+            {'name': 'Casc Extractor', 'cmd': 'd2rc', 'desc': 'Casc数据提取工具'},
         ]
 
         print('\nD2R Reimagined 工具集')
@@ -35,6 +36,8 @@ class D2RReimaginedMenu(D2rJob):
                     self._run_item_details()
                 elif selected_cmd['cmd'] == 'd2ro':
                     self._run_mod_optimizer()
+                elif selected_cmd['cmd'] == 'd2rc':
+                    self._run_casc_extractor()
             else:
                 print('无效的选择')
         except ValueError:
@@ -68,4 +71,10 @@ class D2RReimaginedMenu(D2rJob):
             
         options = {'d2rmm_format': d2rmm_format, 'debug': self.get_options('debug', False)}
         job = ModOptimizer(options)
+        job.run()
+
+    def _run_casc_extractor(self):
+        from matrix.games.d2rReimagined.CascExtractor import CascExtractor
+        options = {}
+        job = CascExtractor(options)
         job.run()

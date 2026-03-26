@@ -1,0 +1,21 @@
+[2026/3/26 15:02:19]: CASCHandlerBase: loading CDN indices...
+[2026/3/26 15:02:19]: CDNIndexHandler.Initialize() completed in 00:00:00.0372225
+[2026/3/26 15:02:19]: FileIndexHandler() completed in 00:00:00.0029860
+[2026/3/26 15:02:19]: CASCHandlerBase: loaded 282533 CDN indexes
+[2026/3/26 15:02:19]: CASCHandlerBase: loading local indices...
+[2026/3/26 15:02:19]: LocalIndexHandler: loaded 147066 indexes
+[2026/3/26 15:02:19]: LocalIndexHandler.Initialize() completed in 00:00:00.0176468
+[2026/3/26 15:02:19]: CASCHandlerBase: loaded 147066 local indexes
+[2026/3/26 15:02:19]: CASCHandler: loading encoding data...
+[2026/3/26 15:02:20]: new EncodingHandler() completed in 00:00:00.1451034
+[2026/3/26 15:02:20]: CASCHandler: loaded 168624 encoding data
+[2026/3/26 15:02:20]: CASCHandler: loading root data...
+[2026/3/26 15:02:20]: CDNIndexHandler: missing EKey: 6766D337F7E9EF2A2CA219869F84C298
+[2026/3/26 15:02:23]: new RootHandler() completed in 00:00:03.4604499
+[2026/3/26 15:02:23]: CASCHandler: loaded 0 root data
+[2026/3/26 15:02:23]: CASCHandler: loading install data...
+[2026/3/26 15:02:23]: CDNIndexHandler: missing EKey: 1993DA5CB1C5D20E4729ECBA80DBF626
+[2026/3/26 15:02:23]: new InstallHandler() completed in 00:00:00.2051891
+[2026/3/26 15:02:23]: CASCHandler: loaded 6 install data
+[2026/3/26 15:02:23]: new CASCHandler() completed in 00:00:03.8733105
+[2026/3/26 15:02:23]: TVFSRootHandler::SetFlags() completed in 00:00:00.1989813
