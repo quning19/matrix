@@ -1,6 +1,7 @@
 .DS_Store
 
 *capture_log/
+debug.log
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

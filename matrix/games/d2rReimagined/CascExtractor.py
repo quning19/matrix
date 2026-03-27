@@ -59,7 +59,11 @@ class CascExtractor(D2rJob):
         directory_path = 'data/global/excel/'
         self.logger.info(f'\n开始提取Excel目录: {directory_path}')
         self._extract_directory(casc_console, d2r_root, output_path, directory_path)
-        self._convert_txt_to_xlsx(output_path, 'excel')
+        
+        convert_choice = input('\n是否将txt文件转换为xlsx? (y/n): ').strip().lower()
+        if convert_choice == 'y':
+            self._convert_txt_to_xlsx(output_path, 'excel')
+        
         self.logger.info('Excel目录提取完成')
 
     def _extract_language_directory(self, casc_console, d2r_root, output_path):

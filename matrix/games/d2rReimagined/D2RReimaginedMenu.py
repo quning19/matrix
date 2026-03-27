@@ -14,6 +14,7 @@ class D2RReimaginedMenu(D2rJob):
             {'name': 'Item Finder', 'cmd': 'd2rf', 'desc': '物品查找器'},
             {'name': 'Item Details', 'cmd': 'd2rd', 'desc': '物品详情生成'},
             {'name': 'Casc Extractor', 'cmd': 'd2rc', 'desc': 'Casc数据提取工具'},
+            {'name': 'Mod Exporter', 'cmd': 'd2re', 'desc': 'Mod文件导出工具'},
         ]
 
         print('\nD2R Reimagined 工具集')
@@ -22,9 +23,13 @@ class D2RReimaginedMenu(D2rJob):
             print(f'{i}. {cmd["name"]} ({cmd["cmd"]}) - {cmd["desc"]}')
         print('=' * 50)
 
-        choice = input('\n请输入序号选择要执行的命令: ')
+        choice = input('\n请输入序号选择要执行的命令 (x退出): ')
         
         try:
+            if choice.strip().lower() == 'x':
+                self.logger.info('用户选择退出')
+                return
+
             choice_idx = int(choice) - 1
             if 0 <= choice_idx < len(commands):
                 selected_cmd = commands[choice_idx]
@@ -38,6 +43,8 @@ class D2RReimaginedMenu(D2rJob):
                     self._run_mod_optimizer()
                 elif selected_cmd['cmd'] == 'd2rc':
                     self._run_casc_extractor()
+                elif selected_cmd['cmd'] == 'd2re':
+                    self._run_mod_exporter()
             else:
                 print('无效的选择')
         except ValueError:
@@ -77,4 +84,10 @@ class D2RReimaginedMenu(D2rJob):
         from matrix.games.d2rReimagined.CascExtractor import CascExtractor
         options = {}
         job = CascExtractor(options)
+        job.run()
+
+    def _run_mod_exporter(self):
+        from matrix.games.d2rReimagined.ModExporter import ModExporter
+        options = {}
+        job = ModExporter(options)
         job.run()
